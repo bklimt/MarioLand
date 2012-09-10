@@ -63,43 +63,10 @@ bool isColliding;
         
         // add parallaxing background with sprites //
         
-        _backgroundNode = [CCParallaxNode node];
-    
-        bg1 = [CCSprite spriteWithFile:@"trees-background.png"];
-        bg1.anchorPoint = CGPointMake(0, 0);
-        bg2 = [CCSprite spriteWithFile:@"trees2-background.png"];
-        bg2.anchorPoint = CGPointMake(0, 0);
+        _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];
         ground.anchorPoint = CGPointMake(0, 0);
-        bg3 = [CCSprite spriteWithFile:@"trees-background.png"];
-        bg3.anchorPoint = CGPointMake(0, 0);
-        bg4 = [CCSprite spriteWithFile:@"trees-background.png"];
-        bg4.anchorPoint = CGPointMake(0, 0);
-        bg4.position=ccp(300,0);
-        bg5 = [CCSprite spriteWithFile:@"trees2-background.png"];
-        bg5.anchorPoint = CGPointMake(0, 0);
-        bg5.position=ccp(300,0);
         [self addChild:ground];
-        
-        // configure cloudspeed and offset for parallax
-        
-        CGPoint cloudSpeed = ccp(0.03, 0.03);
-        CGPoint cloudSpeed2 = ccp(0.05, 0.05);
-        CGPoint cloudSpeed3 = ccp(0.02, 0.02);
-        
-        CGPoint topOffset = CGPointMake(screenSize.height, 0);
-        CGPoint midOffset = CGPointMake(-30,0);
-//        CGPoint downOffset = CGPointZero;
-        
-        // configure different movement speeds for each sprite
-        
-        [_backgroundNode addChild:bg1 z:0 parallaxRatio:cloudSpeed3 positionOffset:midOffset];
-        [_backgroundNode addChild:bg2 z:0 parallaxRatio:cloudSpeed positionOffset:midOffset];
-        [_backgroundNode addChild:bg3 z:0 parallaxRatio:cloudSpeed2 positionOffset:topOffset];
-        
-        [_backgroundNode addChild:bg4 z:-0 parallaxRatio:cloudSpeed2 positionOffset:topOffset];
-        [_backgroundNode addChild:bg5 z:-0 parallaxRatio:cloudSpeed2 positionOffset:topOffset];
-        
         [self addChild:_backgroundNode z:-4 tag:100];
         
         CCMoveBy* move1 = [CCMoveBy actionWithDuration:12 position:CGPointMake(-4000, 0)];

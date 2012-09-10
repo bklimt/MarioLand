@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "HUDLayer.h"
+#import "Weather.h"
 
 
 @interface GameScene : CCLayer {
@@ -19,12 +20,7 @@
     CGRect gameWorldSize;
     HUDLayer * _hud;
     
-    CCParallaxNode *_backgroundNode;
-    CCSprite *bg1;
-    CCSprite *bg2;
-    CCSprite *bg3;
-    CCSprite *bg4;
-    CCSprite *bg5;
+    Weather *_backgroundNode;
     CCSprite *ground;
     
     CCArray* goombas;

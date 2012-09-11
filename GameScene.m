@@ -99,7 +99,7 @@ bool isColliding;
 -(void)update:(ccTime)deltaTime {
     CGPoint pos = player.position;
     CGPoint scaledVelocity = ccpMult(leftJoystick.velocity, 12);
-
+    
     // The Player should also be stopped from going outside the screen
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     float imageWidthHalved = [player texture].contentSize.width * 0.5f;
@@ -117,13 +117,19 @@ bool isColliding;
         playerVelocity = CGPointZero; }
     else {
         rain.position = CGPointMake(player.position.x, screenSize.height);
-  
+        
         [self spritePosition];
         [self checkForCollidableBlock];
         if (isColliding == NO) {
-        newPosition = ccp(player.position.x + scaledVelocity.x + deltaTime, player.position.y);
-       }
-    }
+            newPosition = ccp(player.position.x + scaledVelocity.x + deltaTime, player.position.y);
+        }
+        else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x > 0) {
+            newPosition = ccp(player.position.x - 2, player.position.y);
+        }
+        else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x < 0) {
+            newPosition = ccp(player.position.x + 2, player.position.y);
+        }
+}
     
     if (firstButton.value == 1 && ![player numberOfRunningActions]) {
         NSLog(@"got to jump");
@@ -307,6 +313,7 @@ selector:@selector(goombaDidDrop:)];
         CGRect rect = [self getRectFromObjectProperties:properties tileMap:map];
         if (CGRectContainsPoint(rect, player.position)) {
             isColliding = YES;
+            [player stopAllActions];
             break; }
     }
 }

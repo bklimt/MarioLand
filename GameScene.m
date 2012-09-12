@@ -117,17 +117,19 @@ bool isColliding;
         playerVelocity = CGPointZero; }
     else {
         rain.position = CGPointMake(player.position.x, screenSize.height);
-        
         [self spritePosition];
         [self checkForCollidableBlock];
         if (isColliding == NO) {
             newPosition = ccp(player.position.x + scaledVelocity.x + deltaTime, player.position.y);
         }
         else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x > 0) {
-            newPosition = ccp(player.position.x - 2, player.position.y);
+            newPosition = ccp(player.position.x - 4, player.position.y);
         }
         else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x < 0) {
-            newPosition = ccp(player.position.x + 2, player.position.y);
+            newPosition = ccp(player.position.x + 4, player.position.y);
+        }
+        else {
+            newPosition = ccp(player.position.x + scaledVelocity.x + deltaTime, player.position.y);
         }
 }
     
@@ -135,6 +137,10 @@ bool isColliding;
         NSLog(@"got to jump");
         [self jumpMario];
     }
+    
+//    if (firstButton.value == 1 && [player numberOfRunningActions] == 1) {
+//        NSLog(@"test for double jump");
+//    }
 
     [player setPosition:newPosition];
     [self checkForCollision];
@@ -283,8 +289,10 @@ selector:@selector(goombaDidDrop:)];
 }
 
 -(void)marioHitFlash {
-    CCBlink * blinker = [CCBlink actionWithDuration: 0.6 blinks: 7];
-    [player runAction: blinker];
+    CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 1 blinks: 10];
+    CCCallBlock *renewMarioTex = [CCCallBlock actionWithBlock:^{[player setTexture:tex1];}];
+    id flashSequence = [CCSequence actions:blinker, renewMarioTex, nil];
+    [player runAction: flashSequence];
 
 }
 
@@ -311,9 +319,19 @@ selector:@selector(goombaDidDrop:)];
     for (int i = 0; i < numObjects; i++) {
         NSDictionary* properties = [objectLayer.objects objectAtIndex:i];
         CGRect rect = [self getRectFromObjectProperties:properties tileMap:map];
-        if (CGRectContainsPoint(rect, player.position)) {
+        if (CGRectIntersectsRect(rect, player.boundingBox)) {
             isColliding = YES;
             [player stopAllActions];
+
+            
+            if (rect.origin.y < player.position.y && player.position.y > [CCDirector sharedDirector].winSize.height / 6) {
+                player.position = ccp(player.position.x, rect.origin.y + rect.size.height * 1.6);
+            }
+            else {
+                break;
+            }
+            
+            
             break; }
     }
 }

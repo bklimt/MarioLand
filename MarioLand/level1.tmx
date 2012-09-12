@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="10" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="my_mario_tileset" tilewidth="32" tileheight="32">
-  <image source="../../../Developer/MarioLand/MarioLand/my_mario_tileset.png" width="1024" height="1024"/>
+  <image source="my_mario_tileset.png" width="1024" height="1024"/>
   <tile id="136">
    <properties>
     <property name="collidable" value="true"/>
@@ -14,7 +14,7 @@
   </data>
  </layer>
  <objectgroup name="ObjectLayer1" width="100" height="10">
-  <object name="UpsideGreenTunnel" type="Tunnel" x="1154" y="132" width="188" height="188">
+  <object name="UpsideGreenTunnel" type="Tunnel" x="1154" y="191" width="188" height="148">
    <properties>
     <property name="Collidable" value="True"/>
    </properties>

@@ -138,9 +138,9 @@ bool isColliding;
         [self jumpMario];
     }
     
-//    if (firstButton.value == 1 && [player numberOfRunningActions] == 1) {
-//        NSLog(@"test for double jump");
-//    }
+    if (firstButton.value == 1 && [player numberOfRunningActions] == 1 && firstButton.doubleTapEnabled >= 2) {
+        NSLog(@"jump enabled");
+    }
 
     [player setPosition:newPosition];
     [self checkForCollision];

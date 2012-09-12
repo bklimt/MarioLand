@@ -10,7 +10,7 @@
 
 @implementation SneakyButton
 
-@synthesize status, value, active, isHoldable, isToggleable, rateLimit, radius;
+@synthesize status, value, active, isHoldable, isToggleable, rateLimit, radius, doubleTapEnabled;
 
 - (void) onEnterTransitionDidFinish
 {
@@ -35,8 +35,8 @@
 		isToggleable = 0;
 		radius = 32.0f;
 		rateLimit = 1.0f/120.0f;
-		
 		position_ = rect.origin;
+        doubleTapEnabled = 0;
 	}
 	return self;
 }
@@ -69,6 +69,8 @@
 			active = YES;
 			if (!isHoldable && !isToggleable){
 				value = 1;
+                doubleTapEnabled += 1;
+                [self schedule: @selector(enabled:) interval:0.55];
 				[self schedule: @selector(limiter:) interval:rateLimit];
 			}
 			if (isHoldable) value = 1;
@@ -109,6 +111,10 @@ return NO;
 - (void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self ccTouchEnded:touch withEvent:event];
+}
+
+-(void)enabled:(float)delta{
+    doubleTapEnabled = 0;
 }
 
 @end

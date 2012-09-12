@@ -21,6 +21,7 @@
 	BOOL isHoldable;
 	BOOL isToggleable;
 	float rateLimit;
+    int doubleTapEnabled;
 }
 
 @property (nonatomic, assign) BOOL status;
@@ -29,6 +30,7 @@
 @property (nonatomic, assign) BOOL isHoldable;
 @property (nonatomic, assign) BOOL isToggleable;
 @property (nonatomic, assign) float rateLimit;
+@property (nonatomic, assign) int doubleTapEnabled;
 
 //Optimizations (keep Squared values of all radii for faster calculations) (updated internally when changing radii)
 @property (nonatomic, assign) float radius;

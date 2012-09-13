@@ -11,6 +11,8 @@
 		FA0FAD1A16013DA300457E9D /* particle1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0FAD1916013DA300457E9D /* particle1.png */; };
 		FA0FAD1D160161BB00457E9D /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0FAD1C160161BB00457E9D /* drop.png */; };
 		FA12247715ED7DA100CD8618 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12247615ED7DA100CD8618 /* HUDLayer.m */; };
+		FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1BCFBD16023C4900AD621C /* MainMenu.m */; };
+		FA1BCFC216023FAA00AD621C /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1BCFC116023DC200AD621C /* CCScrollLayer.m */; };
 		FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA64B2FD15FDCB660072FBAA /* stomp.mp3 */; };
 		FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */; };
 		FA8205C115FE84BB00A6511F /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8205C015FE84BB00A6511F /* Weather.m */; };
@@ -181,6 +183,10 @@
 		FA0FAD1C160161BB00457E9D /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
 		FA12247515ED7DA100CD8618 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		FA12247615ED7DA100CD8618 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
+		FA1BCFBC16023C4900AD621C /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		FA1BCFBD16023C4900AD621C /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		FA1BCFC016023DC200AD621C /* CCScrollLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		FA1BCFC116023DC200AD621C /* CCScrollLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
 		FA64B2FD15FDCB660072FBAA /* stomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stomp.mp3; sourceTree = "<group>"; };
 		FA7AF4A915FC2E4A00FF29F5 /* GoombaBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoombaBasic.h; path = ../GoombaBasic.h; sourceTree = "<group>"; };
 		FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoombaBasic.m; path = ../GoombaBasic.m; sourceTree = "<group>"; };
@@ -556,6 +562,8 @@
 				FAB556A915EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.h */,
 				FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */,
 				FAB5569B15EAD88500D9D9C6 /* GameScene.h */,
+				FA1BCFBC16023C4900AD621C /* MainMenu.h */,
+				FA1BCFBD16023C4900AD621C /* MainMenu.m */,
 				FAB5569C15EAD88500D9D9C6 /* GameScene.m */,
 				FA12247515ED7DA100CD8618 /* HUDLayer.h */,
 				FA12247615ED7DA100CD8618 /* HUDLayer.m */,
@@ -638,6 +646,8 @@
 		FAB5553115EAD82000D9D9C6 /* cocos2d */ = {
 			isa = PBXGroup;
 			children = (
+				FA1BCFC016023DC200AD621C /* CCScrollLayer.h */,
+				FA1BCFC116023DC200AD621C /* CCScrollLayer.m */,
 				FAB5553215EAD82000D9D9C6 /* CCAction.h */,
 				FAB5553315EAD82000D9D9C6 /* CCAction.m */,
 				FAB5553515EAD82000D9D9C6 /* CCActionCamera.h */,
@@ -1078,6 +1088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1BCFC216023FAA00AD621C /* CCScrollLayer.m in Sources */,
 				FAF13CE815EC53FF0064F37E /* SimpleAudioEngine.h in Sources */,
 				FAF13CE315EC1C050064F37E /* SneakyButtonSkinnedBase.m in Sources */,
 				FAF13CE215EC1C000064F37E /* SneakyButton.m in Sources */,
@@ -1190,6 +1201,7 @@
 				FA12247715ED7DA100CD8618 /* HUDLayer.m in Sources */,
 				FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */,
 				FA8205C115FE84BB00A6511F /* Weather.m in Sources */,
+				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

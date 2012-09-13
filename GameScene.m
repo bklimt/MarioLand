@@ -307,6 +307,7 @@ selector:@selector(goombaDidDrop:)];
 -(void)marioHitFlash {
     CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 1 blinks: 10];
     [player stopAction:blinker];
+    player.texture = tex1;
     [player runAction: blinker];
 }
 

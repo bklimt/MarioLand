@@ -306,10 +306,8 @@ selector:@selector(goombaDidDrop:)];
 
 -(void)marioHitFlash {
     CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 1 blinks: 10];
-    CCCallBlock *renewMarioTex = [CCCallBlock actionWithBlock:^{[player setTexture:tex1];}];
-    id flashSequence = [CCSequence actions:blinker, renewMarioTex, nil];
-    [player runAction: flashSequence];
-
+    [player stopAction:blinker];
+    [player runAction: blinker];
 }
 
 -(void)checkMarioJumpFinished {

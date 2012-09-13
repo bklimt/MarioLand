@@ -80,7 +80,7 @@ CCParticleMeteor *breath;
         rain.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];
         rain.totalParticles = 400;
         rain.speed = 300;
-        rain.startSize = 8;
+        rain.startSize = 14;
         rain.duration = 100000;
         [self addChild:rain z:90];
         

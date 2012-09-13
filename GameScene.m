@@ -17,7 +17,7 @@ CCParticleRain* rain;
 CCTMXObjectGroup* objectLayer;
 CCTMXTiledMap *map;
 bool isColliding;
-CCParticleMeteor *meteor;
+CCParticleMeteor *breath;
 
 @implementation GameScene
 
@@ -84,11 +84,11 @@ CCParticleMeteor *meteor;
         rain.duration = 100000;
         [self addChild:rain z:90];
         
-        meteor = [CCParticleMeteor node];
-        meteor.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
-        [player addChild:meteor];
-        meteor.totalParticles = 0;
-        meteor.position = ccp(player.position.x - 200, player.position.y);
+        breath = [CCParticleMeteor node];
+        breath.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
+        [player addChild:breath];
+        breath.totalParticles = 0;
+        breath.position = ccp(player.position.x - 200, player.position.y);
 
         [_hud initFirstButton];
         [_hud initJoystick];
@@ -314,14 +314,16 @@ selector:@selector(goombaDidDrop:)];
 -(void)spritePosition {
     if (leftJoystick.degrees > 90 && leftJoystick.degrees < 270) {
         player.flipX = YES;
+        breath.totalParticles = 0;
     }
     else if (leftJoystick.degrees < 90 && leftJoystick.degrees > 0) {
         player.flipX = NO;
+        breath.totalParticles = 0;
     }
     else {
         isColliding = NO;
-        meteor.totalParticles = 1;
-        meteor.emissionRate = 10;
+        breath.totalParticles = 1;
+        breath.emissionRate = 12;
         
     }
 }

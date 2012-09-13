@@ -321,17 +321,36 @@
 
 -(void) step:(ccTime) dt
 {
-	if(boundarySet)
-	{
-		// whole map fits inside a single screen, no need to modify the position - unless map boundaries are increased
-		if(boundaryFullyCovered)
-			return;
-
-		CGPoint tempPos = ccpSub( halfScreenSize, followedNode_.position);
-		[target_ setPosition:ccp(clampf(tempPos.x,leftBoundary,rightBoundary), clampf(tempPos.y,bottomBoundary,topBoundary))];
-	}
-	else
-		[target_ setPosition:ccpSub( halfScreenSize, followedNode_.position )];
+#define CLAMP(x,y,z) MIN(MAX(x,y),z)
+    
+    CGPoint pos;
+    if(boundarySet)
+    {
+        // whole map fits inside a single screen, no need to modify the position - unless map boundaries are increased
+        if(boundaryFullyCovered) return;
+        
+        CGPoint tempPos = ccpSub(halfScreenSize, followedNode_.position);
+        pos = ccp(CLAMP(tempPos.x,leftBoundary,rightBoundary), CLAMP(tempPos.y,bottomBoundary,topBoundary));
+    }
+    else {
+        CCNode *n = (CCNode*)target_;
+        float s = n.scale;
+        pos = ccpSub( halfScreenSize, followedNode_.position );
+        pos.x *= s;
+        pos.y *= s;
+    }
+    
+    CGPoint moveVect;
+    
+    CGPoint oldPos = [target_ position];
+    double dist = ccpDistance(pos, oldPos);
+    if (dist > 1){
+        moveVect = ccpMult(ccpSub(pos,oldPos),0.2);
+        oldPos = ccpAdd(oldPos, moveVect);
+        [target_ setPosition:oldPos];
+    }
+    
+#undef CLAMP
 }
 
 
@@ -351,6 +370,7 @@
 	[followedNode_ release];
 	[super dealloc];
 }
+
 
 @end
 

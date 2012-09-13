@@ -58,11 +58,7 @@ CCParticleMeteor *breath;
         [self runAction:followmario];
         
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
-//        float imageHeight = [player texture].contentSize.height / 3;
-        //player original position height needs to be adjusted below
         player.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6);
-        
-        // add parallaxing background with sprites //
         
         _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];

@@ -24,14 +24,23 @@
 -(id)init {
     
     if (self = [super init]) {
+        
+        CCSprite *menubg = [CCSprite spriteWithFile:@"menubg.png"];
+        [self addChild:menubg];
+        menubg.position = ccp(-130,-40);
+        menubg.anchorPoint = ccp(0,0);
+        menubg.blendFunc = (ccBlendFunc){GL_OES_element_index_uint, GL_LUMINANCE_ALPHA};
 
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         CCLayer *pageOne = [[CCLayer alloc] init];
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"MENU" fontName:@"Arial Rounded MT Bold" fontSize:44];
+        
+        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Menu" fontName:@"Arial Rounded MT Bold" fontSize:44];
+        label.color = ccc3(0, 0, 0);
         label.position =  ccp( screenSize.width /2 , screenSize.height/2 );
         [pageOne addChild:label];
         CCLayer *pageTwo = [[CCLayer alloc] init];
         CCLabelTTF *tlabel = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Arial Rounded MT Bold" fontSize:44];
+        tlabel.color = ccc3(0,0,0);
         CCMenuItemLabel *titem = [CCMenuItemLabel itemWithLabel:tlabel target:self selector:@selector(testCallback:)];
         CCMenu *menu = [CCMenu menuWithItems: titem, nil];
         menu.position = ccp(screenSize.width/2, screenSize.height/2);

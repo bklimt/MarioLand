@@ -78,8 +78,8 @@ CCParticleMeteor *breath;
         
         snow = [CCParticleRain node];
         snow.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];
-        snow.totalParticles = 400;
-        snow.speed = 300;
+        snow.totalParticles = 100;
+        snow.speed = 200;
         snow.startSize = 14;
         snow.duration = 100000;
         [self addChild:snow z:90];

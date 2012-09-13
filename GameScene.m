@@ -322,7 +322,7 @@ selector:@selector(goombaDidDrop:)];
     }
     else {
         isColliding = NO;
-        breath.totalParticles = 1;
+        breath.totalParticles = (arc4random() % (3));
         breath.emissionRate = 12;
         
     }

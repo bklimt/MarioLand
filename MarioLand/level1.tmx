@@ -29,7 +29,7 @@
     <property name="Collidable" value="True"/>
    </properties>
   </object>
-  <object name="LeftScreenBorder" type="ScreenBorder" x="194" y="132" height="186">
+  <object name="LeftScreenBorder" type="ScreenBorder" x="194" y="182" height="131">
    <properties>
     <property name="Collidable" value="True"/>
    </properties>

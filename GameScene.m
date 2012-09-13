@@ -292,10 +292,10 @@ selector:@selector(goombaDidDrop:)];
     id jump1;
     
     if (player.flipX == YES) {
-    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x - 70, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x - 80, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
         
     } else {
-    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x + 70, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x + 80, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
     }
     
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];

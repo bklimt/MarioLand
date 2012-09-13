@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA09836F15FC433D006786CA /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09836E15FC433D006786CA /* star.png */; };
+		FA0FAD1A16013DA300457E9D /* particle1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0FAD1916013DA300457E9D /* particle1.png */; };
 		FA12247715ED7DA100CD8618 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12247615ED7DA100CD8618 /* HUDLayer.m */; };
 		FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA64B2FD15FDCB660072FBAA /* stomp.mp3 */; };
 		FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */; };
@@ -176,6 +177,7 @@
 
 /* Begin PBXFileReference section */
 		FA09836E15FC433D006786CA /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		FA0FAD1916013DA300457E9D /* particle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle1.png; sourceTree = "<group>"; };
 		FA12247515ED7DA100CD8618 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		FA12247615ED7DA100CD8618 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		FA64B2FD15FDCB660072FBAA /* stomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stomp.mp3; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 		FAB5551615EAD82000D9D9C6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA0FAD1916013DA300457E9D /* particle1.png */,
 				FA64B2FD15FDCB660072FBAA /* stomp.mp3 */,
 				FA945C0C15FD581200AE8515 /* level1.tmx */,
 				FADC686215FC787200DC3BBF /* my_mario_tileset.png */,
@@ -1064,6 +1067,7 @@
 				FADC686515FC7D3400DC3BBF /* my_mario_tileset_halfsize.png in Resources */,
 				FA945C0D15FD581200AE8515 /* level1.tmx in Resources */,
 				FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */,
+				FA0FAD1A16013DA300457E9D /* particle1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

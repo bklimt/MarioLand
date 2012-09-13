@@ -17,6 +17,7 @@ CCParticleRain* rain;
 CCTMXObjectGroup* objectLayer;
 CCTMXTiledMap *map;
 bool isColliding;
+CCParticleMeteor *meteor;
 
 @implementation GameScene
 
@@ -82,6 +83,12 @@ bool isColliding;
         rain.startSize = 8;
         rain.duration = 100000;
         [self addChild:rain z:90];
+        
+        meteor = [CCParticleMeteor node];
+        meteor.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
+        [player addChild:meteor];
+        meteor.totalParticles = 0;
+        meteor.position = ccp(player.position.x - 200, player.position.y);
 
         [_hud initFirstButton];
         [_hud initJoystick];
@@ -116,6 +123,7 @@ bool isColliding;
         newPosition = ccp(rightBorderLimit, player.position.y);
         playerVelocity = CGPointZero; }
     else {
+
         rain.position = CGPointMake(player.position.x, screenSize.height);
         [self spritePosition];
         [self checkForCollidableBlock];
@@ -140,13 +148,15 @@ bool isColliding;
     
     if (firstButton.value == 1 && [player numberOfRunningActions] == 1 && firstButton.doubleTapEnabled >= 2) {
         NSLog(@"jump enabled");
-    }
-
+        }
+    
     [player setPosition:newPosition];
     [self checkForCollision];
     [self checkMarioJumpFinished];
     [self checkGroundChange];
 }
+
+
 
 -(void)checkGroundChange {
     int groundWidth = [ground boundingBox].size.width;
@@ -263,7 +273,6 @@ selector:@selector(goombaDidDrop:)];
             break;
         }
         if ((actualDistance < maxCollisionDistance) && skipMarioHitByGoombaCheck == false && goomba.collided == false) {
-            // restart the game for now
             [self resetGoombas];
             [self marioHitFlash];
             break;
@@ -311,6 +320,9 @@ selector:@selector(goombaDidDrop:)];
     }
     else {
         isColliding = NO;
+        meteor.totalParticles = 1;
+        meteor.emissionRate = 10;
+        
     }
 }
 
@@ -330,8 +342,7 @@ selector:@selector(goombaDidDrop:)];
             else {
                 break;
             }
-            
-            
+        
             break; }
     }
 }

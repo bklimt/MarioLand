@@ -26,7 +26,6 @@
     CCArray* goombas;
     float goombaMoveDuration;
     int numGoombasMoved;
-
 }
 
 +(id)scene;

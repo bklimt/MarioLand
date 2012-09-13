@@ -13,7 +13,7 @@
 CCTexture2D* tex1;
 CCTexture2D* tex2;
 GoombaBasic* goomba;
-CCParticleRain* rain;
+CCParticleRain* snow;
 CCTMXObjectGroup* objectLayer;
 CCTMXTiledMap *map;
 bool isColliding;
@@ -76,13 +76,13 @@ CCParticleMeteor *breath;
         CCRepeatForever* repeat = [CCRepeatForever actionWithAction:sequence];
         [_backgroundNode runAction:repeat];
         
-        rain = [CCParticleRain node];
-        rain.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];
-        rain.totalParticles = 400;
-        rain.speed = 300;
-        rain.startSize = 14;
-        rain.duration = 100000;
-        [self addChild:rain z:90];
+        snow = [CCParticleRain node];
+        snow.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];
+        snow.totalParticles = 400;
+        snow.speed = 300;
+        snow.startSize = 14;
+        snow.duration = 100000;
+        [self addChild:snow z:90];
         
         breath = [CCParticleMeteor node];
         breath.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
@@ -124,7 +124,7 @@ CCParticleMeteor *breath;
         playerVelocity = CGPointZero; }
     else {
 
-        rain.position = CGPointMake(player.position.x, screenSize.height);
+        snow.position = CGPointMake(player.position.x, screenSize.height);
         [self spritePosition];
         [self checkForCollidableBlock];
         if (isColliding == NO) {
@@ -289,8 +289,15 @@ selector:@selector(goombaDidDrop:)];
 }
 
 -(void)jumpMario {
-    NSLog(@"inside jumpmario method");
-    id jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x + 70, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+    id jump1;
+    
+    if (player.flipX == YES) {
+    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x - 70, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+        
+    } else {
+    jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (player.position.x + 70, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+    }
+    
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];
     CCSequence* jumpSequence = [CCSequence actions:jump1, nil];
     [player runAction:jumpSequence];

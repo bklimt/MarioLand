@@ -63,14 +63,25 @@ CCParticleMeteor *breath;
         _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];
         ground.anchorPoint = CGPointMake(0, 0);
-        [self addChild:ground];
-        [self addChild:_backgroundNode z:-4 tag:100];
+        [self addChild:ground z:5];
+        [self addChild:_backgroundNode z:0 tag:100];
         
-        CCMoveBy* move1 = [CCMoveBy actionWithDuration:12 position:CGPointMake(-4000, 0)];
-        CCMoveBy* move2 = [CCMoveBy actionWithDuration:0 position:CGPointMake(4000, 0)];
-        CCSequence* sequence = [CCSequence actions:move1, move2, nil]; //add extra actions here
-        CCRepeatForever* repeat = [CCRepeatForever actionWithAction:sequence];
+//        CCMoveBy* move1 = [CCMoveBy actionWithDuration:12 position:CGPointMake(-4000, 0)];
+//        CCMoveBy* move2 = [CCMoveBy actionWithDuration:0 position:CGPointMake(4000, 0)];
+//        CCSequence* sequence = [CCSequence actions:move1, move2, nil]; //add extra actions here
+//        CCRepeatForever* repeat = [CCRepeatForever actionWithAction:sequence];
+        
+        CCRepeatForever *repeat = [CCRepeatForever alloc];
         [_backgroundNode runAction:repeat];
+        
+        CCSprite* gameLevelBackground = [CCSprite spriteWithFile:@"menubg2.png"];
+
+        for (int i = 0; i < gameWorldSize.size.width; i += gameLevelBackground.textureRect.size.width) {
+        CCSprite* gameLevelBackground = [CCSprite spriteWithFile:@"menubg2.png"];
+        gameLevelBackground.position = ccp(i,-20);
+        gameLevelBackground.anchorPoint = ccp(0,0);
+        [self addChild:gameLevelBackground z:1];
+        }
         
         snow = [CCParticleRain node];
         snow.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];

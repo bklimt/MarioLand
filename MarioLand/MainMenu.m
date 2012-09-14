@@ -34,12 +34,12 @@
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         CCLayer *pageOne = [[CCLayer alloc] init];
         
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Menu" fontName:@"Arial Rounded MT Bold" fontSize:44];
+        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Menu" fontName:@"Delfino" fontSize:32];
         label.color = ccc3(0, 0, 0);
         label.position =  ccp( screenSize.width /2 , screenSize.height/2 );
         [pageOne addChild:label];
         CCLayer *pageTwo = [[CCLayer alloc] init];
-        CCLabelTTF *tlabel = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Arial Rounded MT Bold" fontSize:44];
+        CCLabelTTF *tlabel = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Delfino" fontSize:32];
         tlabel.color = ccc3(0,0,0);
         CCMenuItemLabel *titem = [CCMenuItemLabel itemWithLabel:tlabel target:self selector:@selector(testCallback:)];
         CCMenu *menu = [CCMenu menuWithItems: titem, nil];
@@ -47,6 +47,9 @@
         [pageTwo addChild:menu];
         CCScrollLayer *scroller = [[CCScrollLayer alloc] initWithLayers:[NSMutableArray arrayWithObjects: pageOne,pageTwo,nil] widthOffset: 230];
         [self addChild:scroller];
+        
+        
+        
     }
 
     return self;

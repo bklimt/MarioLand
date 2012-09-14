@@ -20,6 +20,8 @@
 		FA8FA4DC15F098A000FB653C /* jumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DB15F098A000FB653C /* jumping.mp3 */; };
 		FA8FA4E015F099CF00FB653C /* ghosts3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */; };
 		FA945C0D15FD581200AE8515 /* level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FA945C0C15FD581200AE8515 /* level1.tmx */; };
+		FAA392F51603D43D008F282B /* GameStats.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA392F41603D43D008F282B /* GameStats.m */; };
+		FAA392FC1603E1A1008F282B /* Delfino.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA392FA1603DEE7008F282B /* Delfino.ttf */; };
 		FAA9AE7D16028C8A0038E1AE /* menubg.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA9AE7C16028C8A0038E1AE /* menubg.png */; };
 		FAA9AE8016029BEA0038E1AE /* menubg2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA9AE7F16029BEA0038E1AE /* menubg2.png */; };
 		FAA9AE841602AFC50038E1AE /* mariocloud3.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA9AE811602AFC40038E1AE /* mariocloud3.png */; };
@@ -155,7 +157,6 @@
 		FAB556AC15EAE59700D9D9C6 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */; };
 		FAB556AE15EAFDF400D9D9C6 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556AD15EAFDF400D9D9C6 /* mario.png */; };
 		FAB556B015EB0D0E00D9D9C6 /* goomba.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556AF15EB0D0E00D9D9C6 /* goomba.png */; };
-		FAB556B215EB417000D9D9C6 /* mario-hit.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B115EB416F00D9D9C6 /* mario-hit.png */; };
 		FAB556B515EB41E300D9D9C6 /* mario-starred.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B315EB41E300D9D9C6 /* mario-starred.png */; };
 		FAB556B615EB41E300D9D9C6 /* mario-starred2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B415EB41E300D9D9C6 /* mario-starred2.png */; };
 		FAB556B815EB5B1100D9D9C6 /* trees-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B715EB5B1000D9D9C6 /* trees-background.png */; };
@@ -201,6 +202,9 @@
 		FA8FA4DB15F098A000FB653C /* jumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jumping.mp3; sourceTree = "<group>"; };
 		FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghosts3.mp3; sourceTree = "<group>"; };
 		FA945C0C15FD581200AE8515 /* level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level1.tmx; sourceTree = "<group>"; };
+		FAA392F31603D43D008F282B /* GameStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStats.h; sourceTree = "<group>"; };
+		FAA392F41603D43D008F282B /* GameStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStats.m; sourceTree = "<group>"; };
+		FAA392FA1603DEE7008F282B /* Delfino.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delfino.ttf; sourceTree = "<group>"; };
 		FAA9AE7C16028C8A0038E1AE /* menubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg.png; sourceTree = "<group>"; };
 		FAA9AE7F16029BEA0038E1AE /* menubg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg2.png; sourceTree = "<group>"; };
 		FAA9AE811602AFC40038E1AE /* mariocloud3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariocloud3.png; sourceTree = "<group>"; };
@@ -474,7 +478,6 @@
 		FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
 		FAB556AD15EAFDF400D9D9C6 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
 		FAB556AF15EB0D0E00D9D9C6 /* goomba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goomba.png; sourceTree = "<group>"; };
-		FAB556B115EB416F00D9D9C6 /* mario-hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mario-hit.png"; sourceTree = "<group>"; };
 		FAB556B315EB41E300D9D9C6 /* mario-starred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mario-starred.png"; sourceTree = "<group>"; };
 		FAB556B415EB41E300D9D9C6 /* mario-starred2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mario-starred2.png"; sourceTree = "<group>"; };
 		FAB556B715EB5B1000D9D9C6 /* trees-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trees-background.png"; sourceTree = "<group>"; };
@@ -571,12 +574,14 @@
 				FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */,
 				FAB556A915EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.h */,
 				FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */,
-				FAB5569B15EAD88500D9D9C6 /* GameScene.h */,
 				FA1BCFBC16023C4900AD621C /* MainMenu.h */,
 				FA1BCFBD16023C4900AD621C /* MainMenu.m */,
+				FAB5569B15EAD88500D9D9C6 /* GameScene.h */,
 				FAB5569C15EAD88500D9D9C6 /* GameScene.m */,
 				FA12247515ED7DA100CD8618 /* HUDLayer.h */,
 				FA12247615ED7DA100CD8618 /* HUDLayer.m */,
+				FAA392F31603D43D008F282B /* GameStats.h */,
+				FAA392F41603D43D008F282B /* GameStats.m */,
 				FAB5568D15EAD82800D9D9C6 /* AppDelegate.h */,
 				FAB5568E15EAD82800D9D9C6 /* AppDelegate.m */,
 				FAB5569315EAD82800D9D9C6 /* IntroLayer.h */,
@@ -622,7 +627,6 @@
 				FAB556BF15EB6AA400D9D9C6 /* trees2-background.png */,
 				FAB556BB15EB663900D9D9C6 /* ground-image.png */,
 				FAB556B715EB5B1000D9D9C6 /* trees-background.png */,
-				FAB556B115EB416F00D9D9C6 /* mario-hit.png */,
 				FAB556B315EB41E300D9D9C6 /* mario-starred.png */,
 				FAB556B415EB41E300D9D9C6 /* mario-starred2.png */,
 				FAB556AF15EB0D0E00D9D9C6 /* goomba.png */,
@@ -641,6 +645,7 @@
 				FAB5552B15EAD82000D9D9C6 /* Icon@2x.png */,
 				FAB5552D15EAD82000D9D9C6 /* Info.plist */,
 				FAB5552E15EAD82000D9D9C6 /* iTunesArtwork */,
+				FAA392FA1603DEE7008F282B /* Delfino.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1048,6 +1053,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA392FC1603E1A1008F282B /* Delfino.ttf in Resources */,
 				FAB5551815EAD82000D9D9C6 /* Default.png in Resources */,
 				FAB5551A15EAD82000D9D9C6 /* Default-Landscape~ipad.png in Resources */,
 				FAB5551C15EAD82000D9D9C6 /* fps_images.png in Resources */,
@@ -1063,7 +1069,6 @@
 				FAB5566D15EAD82700D9D9C6 /* ChangeLog in Resources */,
 				FAB556AE15EAFDF400D9D9C6 /* mario.png in Resources */,
 				FAB556B015EB0D0E00D9D9C6 /* goomba.png in Resources */,
-				FAB556B215EB417000D9D9C6 /* mario-hit.png in Resources */,
 				FAB556B515EB41E300D9D9C6 /* mario-starred.png in Resources */,
 				FAB556B615EB41E300D9D9C6 /* mario-starred2.png in Resources */,
 				FAB556B815EB5B1100D9D9C6 /* trees-background.png in Resources */,
@@ -1222,6 +1227,7 @@
 				FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */,
 				FA8205C115FE84BB00A6511F /* Weather.m in Sources */,
 				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
+				FAA392F51603D43D008F282B /* GameStats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

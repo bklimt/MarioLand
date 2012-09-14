@@ -330,9 +330,26 @@ CCParticleMeteor *breath;
 -(void)checkForCollidableBlock {
     int numObjects = objectLayer.objects.count;
     for (int i = 0; i < numObjects; i++) {
-        NSDictionary* properties = [objectLayer.objects objectAtIndex:i];
+        NSString *matchedObject = [[NSString alloc] initWithFormat:[[objectLayer.objects objectAtIndex:i] objectForKey:@"type"]];
+        
+        if ([matchedObject isEqualToString:@"Tunnel"] == TRUE) {
+            [self checkTunnelCollision:[objectLayer.objects objectAtIndex:i]];
+            continue;
+        }
+
+        NSMutableDictionary* properties = [objectLayer.objects objectAtIndex:i];
+        
+        NSLog(@"%@", [properties allValues]);
+        
         CGRect rect = [self getRectFromObjectProperties:properties tileMap:map];
-        if (CGRectIntersectsRect(rect, player.boundingBox)) {
+        
+        if (CGRectContainsPoint(rect, CGPointMake(player.position.x, player.position.y + player.boundingBox.size.height))){
+            player.position = ccp(player.position.x, player.position.y - 4);
+            id moveBackToLevelGround = [CCJumpTo actionWithDuration:0.1 position:CGPointMake(player.position.x - 6, ([CCDirector sharedDirector].winSize.height / 6)) height:5 jumps:1];
+            [player runAction:moveBackToLevelGround];
+        }
+        
+        else if (CGRectIntersectsRect(rect, player.boundingBox)) {
             isColliding = YES;
             [player stopAllActions];
 
@@ -345,6 +362,14 @@ CCParticleMeteor *breath;
             }
         
             break; }
+    }
+}
+
+-(void)checkTunnelCollision:(id)sender {
+    CGRect rect = [self getRectFromObjectProperties:sender tileMap:map];
+    if (CGRectIntersectsRect(rect, player.boundingBox)) {
+        isColliding = YES;
+        [player stopAllActions];
     }
 }
 

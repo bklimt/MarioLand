@@ -173,7 +173,7 @@ CCParticleMeteor *breath;
     goombas = [[CCArray alloc] initWithCapacity:numGoombas];
     for (int i = 0; i < numGoombas; i++) {
         GoombaBasic* goomba = [GoombaBasic new];
-        [self addChild:goomba z:0 tag:2];
+        [self addChild:goomba z:3 tag:2];
         // Also add the goomba to the goombas array.
         [goombas addObject:goomba]; }
     // call the method to reposition all goombas
@@ -299,9 +299,9 @@ CCParticleMeteor *breath;
 
 -(void)marioHitFlash {
     CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 1 blinks: 10];
-    [player stopAction:blinker];
-    player.texture = tex1;
-    [player runAction: blinker];
+    id showMario = [CCShow action];
+    id sequence = [CCSequence actions:blinker, showMario, nil];
+    [player runAction: sequence];
 }
 
 -(void)checkMarioJumpFinished {

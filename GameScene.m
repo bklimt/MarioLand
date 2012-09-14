@@ -330,7 +330,7 @@ CCParticleMeteor *breath;
 -(void)checkForCollidableBlock {
     int numObjects = objectLayer.objects.count;
     for (int i = 0; i < numObjects; i++) {
-        NSString *matchedObject = [[NSString alloc] initWithFormat:[[objectLayer.objects objectAtIndex:i] objectForKey:@"type"]];
+        NSString *matchedObject = [[objectLayer.objects objectAtIndex:i] objectForKey:@"type"];
         
         if ([matchedObject isEqualToString:@"Tunnel"] == TRUE) {
             [self checkTunnelCollision:[objectLayer.objects objectAtIndex:i]];
@@ -338,9 +338,6 @@ CCParticleMeteor *breath;
         }
 
         NSMutableDictionary* properties = [objectLayer.objects objectAtIndex:i];
-        
-        NSLog(@"%@", [properties allValues]);
-        
         CGRect rect = [self getRectFromObjectProperties:properties tileMap:map];
         
         if (CGRectContainsPoint(rect, CGPointMake(player.position.x, player.position.y + player.boundingBox.size.height))){

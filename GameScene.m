@@ -65,15 +65,6 @@ CCParticleMeteor *breath;
         ground.anchorPoint = CGPointMake(0, 0);
         [self addChild:ground z:5];
         [self addChild:_backgroundNode z:0 tag:100];
-        
-//        CCMoveBy* move1 = [CCMoveBy actionWithDuration:12 position:CGPointMake(-4000, 0)];
-//        CCMoveBy* move2 = [CCMoveBy actionWithDuration:0 position:CGPointMake(4000, 0)];
-//        CCSequence* sequence = [CCSequence actions:move1, move2, nil]; //add extra actions here
-//        CCRepeatForever* repeat = [CCRepeatForever actionWithAction:sequence];
-        
-        CCRepeatForever *repeat = [CCRepeatForever alloc];
-        [_backgroundNode runAction:repeat];
-        
         CCSprite* gameLevelBackground = [CCSprite spriteWithFile:@"menubg2.png"];
 
         for (int i = 0; i < gameWorldSize.size.width; i += gameLevelBackground.textureRect.size.width) {
@@ -113,14 +104,10 @@ CCParticleMeteor *breath;
 -(void)update:(ccTime)deltaTime {
     CGPoint pos = player.position;
     CGPoint scaledVelocity = ccpMult(leftJoystick.velocity, 12);
-    
-    // The Player should also be stopped from going outside the screen
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     float imageWidthHalved = [player texture].contentSize.width * 0.5f;
     float leftBorderLimit = imageWidthHalved;
     float rightBorderLimit = gameWorldSize.size.width - imageWidthHalved;
-    
-    // preventing the player sprite from moving outside the screen
     
     if (pos.x < leftBorderLimit)
     {
@@ -224,15 +211,15 @@ CCParticleMeteor *breath;
 -(void) runGoombaMoveSequence:(CCSprite*)goomba {
     numGoombasMoved++;
     if (numGoombasMoved % 8 == 0 && goombaMoveDuration > 2.0f) {
-    goombaMoveDuration -= 0.1f; }
+        goombaMoveDuration -= 0.1f; }
     CGPoint belowScreenPosition = CGPointMake(-[goomba texture].contentSize.width,
-    goomba.position.y);
-CCMoveTo* move = [CCMoveTo actionWithDuration:goombaMoveDuration
-position:belowScreenPosition];
+                                              goomba.position.y);
+    CCMoveTo* move = [CCMoveTo actionWithDuration:goombaMoveDuration
+                                         position:belowScreenPosition];
     CCCallFuncN* callDidDrop = [CCCallFuncN actionWithTarget:self
-selector:@selector(goombaDidDrop:)];
+                                                    selector:@selector(goombaDidDrop:)];
     CCSequence* sequence = [CCSequence actions:move, callDidDrop, nil];
-[goomba runAction:sequence];
+    [goomba runAction:sequence];
 }
 
 -(void) goombaDidDrop:(id)sender {
@@ -241,7 +228,6 @@ selector:@selector(goombaDidDrop:)];
     CGPoint pos = goomba.position;
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     pos.x = screenSize.width;
-//    pos.y = screenSize.height + [goomba texture].contentSize.height;
     goomba.position = pos;
 }
 

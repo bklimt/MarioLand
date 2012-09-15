@@ -13,6 +13,9 @@
 		FA12247715ED7DA100CD8618 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12247615ED7DA100CD8618 /* HUDLayer.m */; };
 		FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1BCFBD16023C4900AD621C /* MainMenu.m */; };
 		FA1BCFC216023FAA00AD621C /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1BCFC116023DC200AD621C /* CCScrollLayer.m */; };
+		FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A8160482D7003EAD2B /* runningfeet.plist */; };
+		FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A9160482D7003EAD2B /* runningfeet.png */; };
+		FA3003AD16048870003EAD2B /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003AC16048870003EAD2B /* mario.png */; };
 		FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA64B2FD15FDCB660072FBAA /* stomp.mp3 */; };
 		FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */; };
 		FA8205C115FE84BB00A6511F /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8205C015FE84BB00A6511F /* Weather.m */; };
@@ -155,7 +158,7 @@
 		FAB5569D15EAD88500D9D9C6 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5569C15EAD88500D9D9C6 /* GameScene.m */; };
 		FAB556AB15EAE58000D9D9C6 /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */; };
 		FAB556AC15EAE59700D9D9C6 /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */; };
-		FAB556AE15EAFDF400D9D9C6 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556AD15EAFDF400D9D9C6 /* mario.png */; };
+		FAB556AE15EAFDF400D9D9C6 /* mariok.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556AD15EAFDF400D9D9C6 /* mariok.png */; };
 		FAB556B015EB0D0E00D9D9C6 /* goomba.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556AF15EB0D0E00D9D9C6 /* goomba.png */; };
 		FAB556B515EB41E300D9D9C6 /* mario-starred.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B315EB41E300D9D9C6 /* mario-starred.png */; };
 		FAB556B615EB41E300D9D9C6 /* mario-starred2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB556B415EB41E300D9D9C6 /* mario-starred2.png */; };
@@ -193,6 +196,9 @@
 		FA1BCFBD16023C4900AD621C /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		FA1BCFC016023DC200AD621C /* CCScrollLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
 		FA1BCFC116023DC200AD621C /* CCScrollLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		FA3003A8160482D7003EAD2B /* runningfeet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = runningfeet.plist; sourceTree = "<group>"; };
+		FA3003A9160482D7003EAD2B /* runningfeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningfeet.png; sourceTree = "<group>"; };
+		FA3003AC16048870003EAD2B /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
 		FA64B2FD15FDCB660072FBAA /* stomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stomp.mp3; sourceTree = "<group>"; };
 		FA7AF4A915FC2E4A00FF29F5 /* GoombaBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoombaBasic.h; path = ../GoombaBasic.h; sourceTree = "<group>"; };
 		FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoombaBasic.m; path = ../GoombaBasic.m; sourceTree = "<group>"; };
@@ -476,7 +482,7 @@
 		FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		FAB556A915EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
-		FAB556AD15EAFDF400D9D9C6 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
+		FAB556AD15EAFDF400D9D9C6 /* mariok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariok.png; sourceTree = "<group>"; };
 		FAB556AF15EB0D0E00D9D9C6 /* goomba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goomba.png; sourceTree = "<group>"; };
 		FAB556B315EB41E300D9D9C6 /* mario-starred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mario-starred.png"; sourceTree = "<group>"; };
 		FAB556B415EB41E300D9D9C6 /* mario-starred2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mario-starred2.png"; sourceTree = "<group>"; };
@@ -598,6 +604,8 @@
 			children = (
 				FAA9AE811602AFC40038E1AE /* mariocloud3.png */,
 				FAA9AE821602AFC40038E1AE /* mariocloud2.png */,
+				FA3003A8160482D7003EAD2B /* runningfeet.plist */,
+				FA3003A9160482D7003EAD2B /* runningfeet.png */,
 				FAA9AE831602AFC50038E1AE /* mariocloud1.png */,
 				FAA9AE7F16029BEA0038E1AE /* menubg2.png */,
 				FAA9AE7C16028C8A0038E1AE /* menubg.png */,
@@ -630,7 +638,8 @@
 				FAB556B315EB41E300D9D9C6 /* mario-starred.png */,
 				FAB556B415EB41E300D9D9C6 /* mario-starred2.png */,
 				FAB556AF15EB0D0E00D9D9C6 /* goomba.png */,
-				FAB556AD15EAFDF400D9D9C6 /* mario.png */,
+				FAB556AD15EAFDF400D9D9C6 /* mariok.png */,
+				FA3003AC16048870003EAD2B /* mario.png */,
 				FA8FA4D815F0975C00FB653C /* mario3.png */,
 				FAB5551715EAD82000D9D9C6 /* Default.png */,
 				FAB5551915EAD82000D9D9C6 /* Default-Landscape~ipad.png */,
@@ -1067,7 +1076,7 @@
 				FAB5552C15EAD82000D9D9C6 /* Icon@2x.png in Resources */,
 				FAB5552F15EAD82000D9D9C6 /* iTunesArtwork in Resources */,
 				FAB5566D15EAD82700D9D9C6 /* ChangeLog in Resources */,
-				FAB556AE15EAFDF400D9D9C6 /* mario.png in Resources */,
+				FAB556AE15EAFDF400D9D9C6 /* mariok.png in Resources */,
 				FAB556B015EB0D0E00D9D9C6 /* goomba.png in Resources */,
 				FAB556B515EB41E300D9D9C6 /* mario-starred.png in Resources */,
 				FAB556B615EB41E300D9D9C6 /* mario-starred2.png in Resources */,
@@ -1103,6 +1112,9 @@
 				FAA9AE841602AFC50038E1AE /* mariocloud3.png in Resources */,
 				FAA9AE851602AFC50038E1AE /* mariocloud2.png in Resources */,
 				FAA9AE861602AFC50038E1AE /* mariocloud1.png in Resources */,
+				FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */,
+				FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */,
+				FA3003AD16048870003EAD2B /* mario.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

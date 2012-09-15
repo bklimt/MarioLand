@@ -12,14 +12,20 @@
 
 CCTexture2D* tex1;
 CCTexture2D* tex2;
+CCTexture2D* tex3;
 GoombaBasic* goomba;
 CCParticleRain* snow;
 CCTMXObjectGroup* objectLayer;
 CCTMXTiledMap *map;
 bool isColliding;
 CCParticleMeteor *breath;
+CCSprite* marioFeet;
+CCSprite* marioFullImage;
+CCRepeatForever *repeat;
 
 @implementation GameScene
+@synthesize anim;
+@synthesize player;
 
 +(id) scene {
     CCScene *scene = [CCScene node];
@@ -48,6 +54,7 @@ CCParticleMeteor *breath;
         CCLOG(@"%@: %@", NSStringFromSelector(_cmd), self);
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"ghosts3.mp3" loop:YES]; 
         self.isAccelerometerEnabled = YES;
+        tex3 = [[CCTextureCache sharedTextureCache] addImage:@"mariok.png"];
         tex1 = [[CCTextureCache sharedTextureCache] addImage:@"mario.png"];
         tex2 = [[CCTextureCache sharedTextureCache] addImage:@"mario3.png"];
         player = [CCSprite spriteWithTexture:tex1];
@@ -82,9 +89,36 @@ CCParticleMeteor *breath;
         snow.duration = 100000;
         [self addChild:snow z:90];
         
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"runningfeet.plist"];
+        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"runningfeet.png"];
+        [self addChild:spriteSheet z:200];
+        
+        
+        NSMutableArray *animFrames = [NSMutableArray array];
+        for (int i = 1; i <= 5; i++) {
+            NSString *file = [NSString stringWithFormat:@"foot%d.png", i];
+            CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:file];
+            [animFrames addObject:frame];
+        }
+        
+        marioFeet = [CCSprite spriteWithSpriteFrameName:@"foot1.png"];
+        marioFeet.position = ccp(300.0f, screenSize.height / 6 + 5);
+        [spriteSheet addChild:marioFeet z:50];
+        anim = [CCAnimation animationWithSpriteFrames:animFrames delay:0.05f];
+        repeat = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:anim]];
+        [marioFeet runAction:repeat];
+        marioFeet.flipX = YES;
+        marioFeet.visible = NO;
+        
+        marioFullImage = [CCSprite spriteWithTexture:tex3];
+        marioFullImage.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6);
+        [self addChild:marioFullImage z:11];
+
+        
         breath = [CCParticleMeteor node];
         breath.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
-        [player addChild:breath];
+        [player addChild:breath z:12];
         breath.totalParticles = 0;
         breath.position = ccp(player.position.x - 200, player.position.y);
 
@@ -108,7 +142,7 @@ CCParticleMeteor *breath;
     float imageWidthHalved = [player texture].contentSize.width * 0.5f;
     float leftBorderLimit = imageWidthHalved;
     float rightBorderLimit = gameWorldSize.size.width - imageWidthHalved;
-    
+
     if (pos.x < leftBorderLimit)
     {
         newPosition = ccp(leftBorderLimit, player.position.y);
@@ -117,7 +151,9 @@ CCParticleMeteor *breath;
         newPosition = ccp(rightBorderLimit, player.position.y);
         playerVelocity = CGPointZero; }
     else {
-
+        marioFullImage.position = CGPointMake(player.position.x, player.position.y);
+        marioFeet.position = ccp(player.position.x + scaledVelocity.x, player.position.y - player.boundingBox.size.height / 2.4);
+        [repeat step:0.02];
         snow.position = CGPointMake(player.position.x, screenSize.height);
         [self spritePosition];
         [self checkForCollidableBlock];
@@ -248,7 +284,7 @@ CCParticleMeteor *breath;
         
         if (CGRectContainsPoint([player boundingBox], CGPointMake(goomba.position.x + 20, goomba.position.y))) {
             [goomba stopAllActions];
-            id blinker = [CCBlink actionWithDuration: 2.0 blinks: 20];
+            id blinker = [CCBlink actionWithDuration: 1.0 blinks: 10];
             id callback = [CCCallFuncN actionWithTarget:self selector:@selector(removeGoomba:)];
             id sequence = [CCSequence actions:blinker, callback, nil];
             [[SimpleAudioEngine sharedEngine] playEffect:@"stomp.mp3"];
@@ -260,7 +296,6 @@ CCParticleMeteor *breath;
             id returnMario = [CCCallFuncN actionWithTarget:self selector:@selector(returnM:)];
             id sequence4 = [CCSequence actions:jumpOff, returnMario, nil];
             [player runAction:sequence4];
-            //goomba should actually be flipped along x axis and animated to drop off screen/
             
             skipMarioHitByGoombaCheck = true;
             break;
@@ -273,12 +308,12 @@ CCParticleMeteor *breath;
     }
 }
 
--(void)returnM:(CCSprite*)sender {
+-(void)returnM:(id)sender {
     [sender stopAllActions];
 }
 
 -(void)removeGoomba:(id)sender {
-    [self removeChild:sender cleanup:false];
+    [sender removeFromParentAndCleanup:true];
 }
 
 -(void)jumpMario {
@@ -293,19 +328,26 @@ CCParticleMeteor *breath;
     
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];
     CCSequence* jumpSequence = [CCSequence actions:jump1, nil];
+    marioFullImage.visible = NO;
+    marioFeet.visible = NO;
     [player runAction:jumpSequence];
     player.texture = tex2;
 }
 
 -(void)marioHitFlash {
-    CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 1 blinks: 10];
+    CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 2 blinks: 10];
     id showMario = [CCShow action];
     id sequence = [CCSequence actions:blinker, showMario, nil];
+    player.texture = tex3;
     [player runAction: sequence];
+    marioFeet.visible = YES;
+    marioFullImage.visible = NO;
 }
 
 -(void)checkMarioJumpFinished {
     if (![player numberOfRunningActions]) {
+        marioFeet.visible = YES;
+        marioFullImage.visible = YES;
         player.texture = tex1;
     }
 }
@@ -313,13 +355,24 @@ CCParticleMeteor *breath;
 -(void)spritePosition {
     if (leftJoystick.degrees > 90 && leftJoystick.degrees < 270) {
         player.flipX = YES;
+        marioFullImage.flipX = YES;
+        marioFullImage.opacity = 0;
+        marioFeet.opacity = 255;
+        marioFeet.flipX = NO;
         breath.totalParticles = 0;
     }
     else if (leftJoystick.degrees < 90 && leftJoystick.degrees > 0) {
         player.flipX = NO;
+        marioFullImage.flipX = NO;
+        marioFullImage.opacity = 0;
+        marioFeet.opacity = 255;
+        marioFeet.flipX = YES;
         breath.totalParticles = 0;
     }
     else {
+        [repeat step:0.4];
+        marioFullImage.opacity = 255;
+        marioFeet.opacity = 0;
         isColliding = NO;
         breath.totalParticles = (arc4random() % (3));
         breath.emissionRate = 12;

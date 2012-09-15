@@ -29,8 +29,6 @@
         [self addChild:menubg];
         menubg.position = ccp(-130,-40);
         menubg.anchorPoint = ccp(0,0);
-        menubg.blendFunc = (ccBlendFunc){GL_OES_element_index_uint, GL_LUMINANCE_ALPHA};
-
         CGSize screenSize = [CCDirector sharedDirector].winSize;
         CCLayer *pageOne = [[CCLayer alloc] init];
         

@@ -28,6 +28,9 @@
     int numGoombasMoved;
 }
 
+@property (nonatomic, assign) CCAnimation *anim;
+@property (nonatomic, strong) CCSprite *player;
+
 +(id)scene;
 
 - (id)initWithHUD:(HUDLayer *)hud;

@@ -419,11 +419,12 @@ CCRepeatForever *repeat;
     CGRect rect = [self getRectFromObjectProperties:sender tileMap:map];
     if (CGRectIntersectsRect(rect, player.boundingBox)) {
         isColliding = YES;
+        marioFullImage.visible = NO;
         [player stopAllActions];
         player.position = ccp(player.position.x, player.position.y - 4);
         
         if (rect.origin.y < player.position.y && player.position.y > [CCDirector sharedDirector].winSize.height / 6) {
-            player.position = ccp(player.position.x, rect.origin.y + rect.size.height * 1.6);
+            player.position = ccp(player.position.x, rect.origin.y + rect.size.height * 1.2);
         }
     }
 }

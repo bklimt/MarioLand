@@ -118,7 +118,7 @@ CCRepeatForever *repeat;
         
         breath = [CCParticleMeteor node];
         breath.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle1.png"];
-        [player addChild:breath z:12];
+        [marioFullImage addChild:breath];
         breath.totalParticles = 0;
         breath.position = ccp(player.position.x - 200, player.position.y);
 

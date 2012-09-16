@@ -44,7 +44,7 @@
     <property name="ItemBox" value="True"/>
    </properties>
   </object>
-  <object name="BlueBlock" type="Block" x="2590" y="98" width="68" height="64">
+  <object name="BlueBlock" type="Block" x="2606" y="94" width="35" height="68">
    <properties>
     <property name="Collidable" value="True"/>
    </properties>

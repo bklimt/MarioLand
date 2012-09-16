@@ -347,7 +347,7 @@ CCRepeatForever *repeat;
 }
 
 -(void)spritePosition {
-    if (leftJoystick.degrees > 90 && leftJoystick.degrees < 270) {
+    if (leftJoystick.degrees >= 90 && leftJoystick.degrees < 270) {
         player.flipX = YES;
         marioFullImage.flipX = YES;
         marioFullImage.opacity = 0;
@@ -355,15 +355,8 @@ CCRepeatForever *repeat;
         marioFeet.flipX = NO;
         breath.totalParticles = 0;
     }
-    else if (leftJoystick.degrees < 90 && leftJoystick.degrees > 0) {
-        player.flipX = NO;
-        marioFullImage.flipX = NO;
-        marioFullImage.opacity = 0;
-        marioFeet.opacity = 255;
-        marioFeet.flipX = YES;
-        breath.totalParticles = 0;
-    }
-    else {
+    
+    else if (leftJoystick.degrees == 0){
         [repeat step:0.4];
         marioFullImage.opacity = 255;
         marioFeet.opacity = 0;
@@ -372,6 +365,15 @@ CCRepeatForever *repeat;
         breath.emissionRate = 12;
         
     }
+    else {
+        player.flipX = NO;
+        marioFullImage.flipX = NO;
+        marioFullImage.opacity = 0;
+        marioFeet.opacity = 255;
+        marioFeet.flipX = YES;
+        breath.totalParticles = 0;
+    }
+
 }
 
 -(void)checkForCollidableBlock {

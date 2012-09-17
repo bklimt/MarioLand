@@ -16,6 +16,8 @@
 		FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A8160482D7003EAD2B /* runningfeet.plist */; };
 		FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A9160482D7003EAD2B /* runningfeet.png */; };
 		FA3003AD16048870003EAD2B /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003AC16048870003EAD2B /* mario.png */; };
+		FA4F5CF51607075D00843AE3 /* mariostomp.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4F5CF41607075D00843AE3 /* mariostomp.png */; };
+		FA4F5CF816070B7600843AE3 /* yah.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4F5CF716070B7600843AE3 /* yah.wav */; };
 		FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA64B2FD15FDCB660072FBAA /* stomp.mp3 */; };
 		FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */; };
 		FA8205C115FE84BB00A6511F /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8205C015FE84BB00A6511F /* Weather.m */; };
@@ -199,6 +201,8 @@
 		FA3003A8160482D7003EAD2B /* runningfeet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = runningfeet.plist; sourceTree = "<group>"; };
 		FA3003A9160482D7003EAD2B /* runningfeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningfeet.png; sourceTree = "<group>"; };
 		FA3003AC16048870003EAD2B /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
+		FA4F5CF41607075D00843AE3 /* mariostomp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariostomp.png; sourceTree = "<group>"; };
+		FA4F5CF716070B7600843AE3 /* yah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yah.wav; sourceTree = "<group>"; };
 		FA64B2FD15FDCB660072FBAA /* stomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stomp.mp3; sourceTree = "<group>"; };
 		FA7AF4A915FC2E4A00FF29F5 /* GoombaBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoombaBasic.h; path = ../GoombaBasic.h; sourceTree = "<group>"; };
 		FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoombaBasic.m; path = ../GoombaBasic.m; sourceTree = "<group>"; };
@@ -639,6 +643,8 @@
 				FAB556B415EB41E300D9D9C6 /* mario-starred2.png */,
 				FAB556AF15EB0D0E00D9D9C6 /* goomba.png */,
 				FAB556AD15EAFDF400D9D9C6 /* mariok.png */,
+				FA4F5CF716070B7600843AE3 /* yah.wav */,
+				FA4F5CF41607075D00843AE3 /* mariostomp.png */,
 				FA3003AC16048870003EAD2B /* mario.png */,
 				FA8FA4D815F0975C00FB653C /* mario3.png */,
 				FAB5551715EAD82000D9D9C6 /* Default.png */,
@@ -1115,6 +1121,8 @@
 				FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */,
 				FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */,
 				FA3003AD16048870003EAD2B /* mario.png in Resources */,
+				FA4F5CF51607075D00843AE3 /* mariostomp.png in Resources */,
+				FA4F5CF816070B7600843AE3 /* yah.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

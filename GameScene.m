@@ -13,6 +13,7 @@
 CCTexture2D* tex1;
 CCTexture2D* tex2;
 CCTexture2D* tex3;
+CCTexture2D* tex4;
 GoombaBasic* goomba;
 CCParticleRain* snow;
 CCTMXObjectGroup* objectLayer;
@@ -57,6 +58,7 @@ CCRepeatForever *repeat;
         tex3 = [[CCTextureCache sharedTextureCache] addImage:@"mariok.png"];
         tex1 = [[CCTextureCache sharedTextureCache] addImage:@"mario.png"];
         tex2 = [[CCTextureCache sharedTextureCache] addImage:@"mario3.png"];
+        tex4 = [[CCTextureCache sharedTextureCache] addImage:@"mariostomp.png"];
         player = [CCSprite spriteWithTexture:tex1];
 
         [self addChild:player z:10 tag:1];
@@ -177,8 +179,13 @@ CCRepeatForever *repeat;
     }
     
     if (firstButton.value == 1 && [player numberOfRunningActions] == 1 && firstButton.doubleTapEnabled >= 2) {
+        float flippedDirection = ((player.flipX == YES) ? -360 : 360);
+        [[SimpleAudioEngine sharedEngine] playEffect:@"yah.wav"];
+        id rotate = [CCRotateBy actionWithDuration:0.2 angle:flippedDirection];
+        [player runAction:rotate];
+        player.texture = tex4;
         NSLog(@"jump enabled");
-        }
+    }
     
     [player setPosition:newPosition];
     [self checkForCollision];
@@ -317,7 +324,7 @@ CCRepeatForever *repeat;
 }
 
 -(void)jumpMario {
-    float movePlayerPosition = ((player.flipX == YES) ? player.position.x - 80 : player.position.x + 80);
+    float movePlayerPosition = ((player.flipX == YES) ? player.position.x - 100 : player.position.x + 100);
     id jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (movePlayerPosition, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
     
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];
@@ -343,6 +350,7 @@ CCRepeatForever *repeat;
         marioFeet.visible = YES;
         marioFullImage.visible = YES;
         player.texture = tex1;
+        player.rotation = 0;
     }
 }
 

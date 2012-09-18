@@ -16,7 +16,6 @@
     CCSprite* player;
     CGPoint playerVelocity;
     CGPoint newPosition;
-
     CGRect gameWorldSize;
     HUDLayer * _hud;
     

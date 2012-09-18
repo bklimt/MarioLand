@@ -25,7 +25,7 @@
 		FA8FA4DC15F098A000FB653C /* jumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DB15F098A000FB653C /* jumping.mp3 */; };
 		FA8FA4E015F099CF00FB653C /* ghosts3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */; };
 		FA945C0D15FD581200AE8515 /* level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FA945C0C15FD581200AE8515 /* level1.tmx */; };
-		FAA392F51603D43D008F282B /* GameStats.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA392F41603D43D008F282B /* GameStats.m */; };
+		FAA392F51603D43D008F282B /* CurrentGameStats.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA392F41603D43D008F282B /* CurrentGameStats.m */; };
 		FAA392FC1603E1A1008F282B /* Delfino.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA392FA1603DEE7008F282B /* Delfino.ttf */; };
 		FAA9AE7D16028C8A0038E1AE /* menubg.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA9AE7C16028C8A0038E1AE /* menubg.png */; };
 		FAA9AE8016029BEA0038E1AE /* menubg2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA9AE7F16029BEA0038E1AE /* menubg2.png */; };
@@ -212,8 +212,8 @@
 		FA8FA4DB15F098A000FB653C /* jumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jumping.mp3; sourceTree = "<group>"; };
 		FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghosts3.mp3; sourceTree = "<group>"; };
 		FA945C0C15FD581200AE8515 /* level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level1.tmx; sourceTree = "<group>"; };
-		FAA392F31603D43D008F282B /* GameStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStats.h; sourceTree = "<group>"; };
-		FAA392F41603D43D008F282B /* GameStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStats.m; sourceTree = "<group>"; };
+		FAA392F31603D43D008F282B /* CurrentGameStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentGameStats.h; sourceTree = "<group>"; };
+		FAA392F41603D43D008F282B /* CurrentGameStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentGameStats.m; sourceTree = "<group>"; };
 		FAA392FA1603DEE7008F282B /* Delfino.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delfino.ttf; sourceTree = "<group>"; };
 		FAA9AE7C16028C8A0038E1AE /* menubg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg.png; sourceTree = "<group>"; };
 		FAA9AE7F16029BEA0038E1AE /* menubg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg2.png; sourceTree = "<group>"; };
@@ -496,10 +496,10 @@
 		FAB556C115EB6D5700D9D9C6 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		FADC686215FC787200DC3BBF /* my_mario_tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_mario_tileset.png; sourceTree = "<group>"; };
 		FADC686415FC7D3400DC3BBF /* my_mario_tileset_halfsize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_mario_tileset_halfsize.png; sourceTree = "<group>"; };
-		FAF13CDB15EC14F60064F37E /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
-		FAF13CDC15EC14F60064F37E /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButton.m; sourceTree = "<group>"; };
-		FAF13CDD15EC14F60064F37E /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
-		FAF13CDE15EC14F60064F37E /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
+		FAF13CDB15EC14F60064F37E /* SneakyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SneakyButton.h; path = MarioLand/SneakyButton.h; sourceTree = "<group>"; };
+		FAF13CDC15EC14F60064F37E /* SneakyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SneakyButton.m; path = MarioLand/SneakyButton.m; sourceTree = "<group>"; };
+		FAF13CDD15EC14F60064F37E /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SneakyButtonSkinnedBase.h; path = MarioLand/SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		FAF13CDE15EC14F60064F37E /* SneakyButtonSkinnedBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SneakyButtonSkinnedBase.m; path = MarioLand/SneakyButtonSkinnedBase.m; sourceTree = "<group>"; };
 		FAF13CE015EC19CE0064F37E /* firstbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstbutton.png; sourceTree = "<group>"; };
 		FAF13CE415EC1DE90064F37E /* firstbutton-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firstbutton-pressed.png"; sourceTree = "<group>"; };
 		FAF13CE615EC51C20064F37E /* grass-land.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "grass-land.mp3"; sourceTree = "<group>"; };
@@ -535,9 +535,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA4F5CF91607131100843AE3 /* button */ = {
+			isa = PBXGroup;
+			children = (
+				FAF13CDB15EC14F60064F37E /* SneakyButton.h */,
+				FAF13CDC15EC14F60064F37E /* SneakyButton.m */,
+				FAF13CDD15EC14F60064F37E /* SneakyButtonSkinnedBase.h */,
+				FAF13CDE15EC14F60064F37E /* SneakyButtonSkinnedBase.m */,
+			);
+			name = button;
+			sourceTree = "<group>";
+		};
 		FAB554F415EAD81F00D9D9C6 = {
 			isa = PBXGroup;
 			children = (
+				FA4F5CF91607131100843AE3 /* button */,
 				FAB556A615EADB3A00D9D9C6 /* joystick */,
 				FAB5551515EAD81F00D9D9C6 /* MarioLand */,
 				FAB5550215EAD81F00D9D9C6 /* Frameworks */,
@@ -576,22 +588,14 @@
 				FA8205C015FE84BB00A6511F /* Weather.m */,
 				FA7AF4A915FC2E4A00FF29F5 /* GoombaBasic.h */,
 				FA7AF4AA15FC2E4A00FF29F5 /* GoombaBasic.m */,
-				FAB556A715EAE2C000D9D9C6 /* SneakyJoystick.h */,
-				FAF13CDB15EC14F60064F37E /* SneakyButton.h */,
-				FAF13CDC15EC14F60064F37E /* SneakyButton.m */,
-				FAF13CDD15EC14F60064F37E /* SneakyButtonSkinnedBase.h */,
-				FAF13CDE15EC14F60064F37E /* SneakyButtonSkinnedBase.m */,
-				FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */,
-				FAB556A915EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.h */,
-				FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */,
 				FA1BCFBC16023C4900AD621C /* MainMenu.h */,
 				FA1BCFBD16023C4900AD621C /* MainMenu.m */,
 				FAB5569B15EAD88500D9D9C6 /* GameScene.h */,
 				FAB5569C15EAD88500D9D9C6 /* GameScene.m */,
 				FA12247515ED7DA100CD8618 /* HUDLayer.h */,
 				FA12247615ED7DA100CD8618 /* HUDLayer.m */,
-				FAA392F31603D43D008F282B /* GameStats.h */,
-				FAA392F41603D43D008F282B /* GameStats.m */,
+				FAA392F31603D43D008F282B /* CurrentGameStats.h */,
+				FAA392F41603D43D008F282B /* CurrentGameStats.m */,
 				FAB5568D15EAD82800D9D9C6 /* AppDelegate.h */,
 				FAB5568E15EAD82800D9D9C6 /* AppDelegate.m */,
 				FAB5569315EAD82800D9D9C6 /* IntroLayer.h */,
@@ -1013,6 +1017,10 @@
 		FAB556A615EADB3A00D9D9C6 /* joystick */ = {
 			isa = PBXGroup;
 			children = (
+				FAB556A715EAE2C000D9D9C6 /* SneakyJoystick.h */,
+				FAB556A815EAE2C000D9D9C6 /* SneakyJoystick.m */,
+				FAB556A915EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.h */,
+				FAB556AA15EAE2C000D9D9C6 /* SneakyJoystickSkinnedBase.m */,
 			);
 			name = joystick;
 			path = MarioLand;
@@ -1247,7 +1255,7 @@
 				FA7AF4AB15FC2E4A00FF29F5 /* GoombaBasic.m in Sources */,
 				FA8205C115FE84BB00A6511F /* Weather.m in Sources */,
 				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
-				FAA392F51603D43D008F282B /* GameStats.m in Sources */,
+				FAA392F51603D43D008F282B /* CurrentGameStats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

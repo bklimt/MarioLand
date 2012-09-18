@@ -9,13 +9,14 @@
 #import "GameScene.h"
 #import "SimpleAudioEngine.h"
 #import "GoombaBasic.h"
+#import "CurrentGameStats.h"
 
 CCTexture2D* tex1;
 CCTexture2D* tex2;
 CCTexture2D* tex3;
 CCTexture2D* tex4;
 GoombaBasic* goomba;
-CCParticleRain* snow;
+CCParticleSnow* snow;
 CCTMXObjectGroup* objectLayer;
 CCTMXTiledMap *map;
 bool isColliding;
@@ -23,6 +24,7 @@ CCParticleMeteor *breath;
 CCSprite* marioFeet;
 CCSprite* marioFullImage;
 CCRepeatForever *repeat;
+int points;
 
 @implementation GameScene
 @synthesize anim;
@@ -87,7 +89,7 @@ CCRepeatForever *repeat;
         snow.texture = [[CCTextureCache sharedTextureCache] addImage:@"drop.png"];
         snow.totalParticles = 100;
         snow.speed = 200;
-        snow.startSize = 14;
+        snow.startSize = 8;
         snow.duration = 100000;
         [self addChild:snow z:90];
         
@@ -333,6 +335,7 @@ CCRepeatForever *repeat;
     marioFeet.visible = NO;
     [player runAction:jumpSequence];
     player.texture = tex2;
+    NSLog(@"%i", points);
 }
 
 -(void)marioHitFlash {

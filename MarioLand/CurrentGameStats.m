@@ -11,12 +11,16 @@
 
 @implementation CurrentGameStats
 
-@synthesize pointsAccumulated;
-@synthesize hitsAccumulated;
-@synthesize secondsPlayed;
+@synthesize currentGameStats;
 
-int secondsPlayed = 0;
-int points = 2;
-int hits = 2;
+
++(NSMutableDictionary*)returnNewGameStats{
+    currentGameStats = [NSMutableDictionary new];
+    [currentGameStats setValue:@"0" forKey:@"pointsAccumulated"];
+    [currentGameStats setValue:@"0" forKey:@"hitsAccumulated"];
+    [currentGameStats setValue:@"0" forKey:@"secondsPlayed"];
+    [currentGameStats setValue:@"0" forKey:@"currentGameStats"];
+    return currentGameStats;
+}
 
 @end

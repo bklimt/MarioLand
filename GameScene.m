@@ -44,7 +44,8 @@ int points;
 - (id)initWithHUD:(HUDLayer *)hud
 {
     if ((self = [super init])) {
-        
+        NSMutableDictionary* newdictionary = [CurrentGameStats returnNewGameStats];
+        NSLog(@"%@", newdictionary);
         CCTMXTiledMap *map = [CCTMXTiledMap tiledMapWithTMXFile:@"level1.tmx"];
         [self addChild:map z:10 tag:666];
         for( CCTMXLayer* child in [map children] ) {
@@ -335,7 +336,6 @@ int points;
     marioFeet.visible = NO;
     [player runAction:jumpSequence];
     player.texture = tex2;
-    NSLog(@"%i", points);
 }
 
 -(void)marioHitFlash {

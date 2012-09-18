@@ -6,16 +6,13 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
-
-int pointsAccumulated;
-int hitsAccumlated;
-int secondsPlayed;
+NSMutableDictionary* currentGameStats;
 
 @interface CurrentGameStats : NSObject {
     
 }
-@property (nonatomic) int pointsAccumulated;
-@property (nonatomic) int hitsAccumulated;
-@property (nonatomic) int secondsPlayed;
+@property (nonatomic, retain) NSMutableDictionary* currentGameStats;
+
++(NSMutableDictionary*)returnNewGameStats;
 
 @end

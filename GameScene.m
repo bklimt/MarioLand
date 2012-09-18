@@ -128,6 +128,7 @@ int points;
 
         [_hud initFirstButton];
         [_hud initJoystick];
+        [_hud initMenuButton];
         [self scheduleUpdate];
         [self initGoombas];
     }

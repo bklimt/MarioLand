@@ -21,13 +21,6 @@
     firstButtonBase.position = ccp(450, 55);
     [self addChild:firstButtonBase];
     firstButton = [firstButtonBase.button retain];
-    CCSprite *star1 = [CCSprite spriteWithFile:@"star.png"];
-    star1.position = ccp(30, 300);
-    [self addChild:star1 z:20];
-    id skewStar = [CCSkewTo actionWithDuration:1.0 skewX:0.0 skewY:180];
-    [star1 runAction:skewStar];
-    
-
 }
 
 -(void)initJoystick {
@@ -39,6 +32,18 @@
     joystickBase.position = ccp(55, 55);
     [self addChild:joystickBase];
     leftJoystick = [joystickBase.joystick retain];
+}
+
+-(void)initMenuButton {
+    MenuButton* menuButtonBase = [[MenuButton alloc] init];
+    menuButtonBase.position = ccp(30, 300);
+    [self addChild:menuButtonBase];
+    
+    CCSprite *star1 = [CCSprite spriteWithFile:@"star.png"];
+    star1.position = ccp(30, 300);
+    [self addChild:star1 z:20];
+    id skewStar = [CCSkewTo actionWithDuration:1.0 skewX:0.0 skewY:180];
+    [star1 runAction:skewStar];
 }
 
 @end

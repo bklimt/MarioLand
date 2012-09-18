@@ -12,14 +12,17 @@
 #import "SneakyJoystickSkinnedBase.h"
 #import "SneakyButton.h"
 #import "SneakyButtonSkinnedBase.h"
+#import "MenuButton.h"
 
-SneakyJoystick *leftJoystick;
-SneakyButton *firstButton;
+SneakyJoystick* leftJoystick;
+SneakyButton* firstButton;
+MenuButton* menuButton;
 
 @interface HUDLayer : CCLayer {
 }
 
 -(void)initJoystick;
 -(void)initFirstButton;
+-(void)initMenuButton;
 
 @end

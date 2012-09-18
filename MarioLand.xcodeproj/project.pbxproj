@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08B67E1608342C00B65144 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08B67D1608342C00B65144 /* MenuButton.m */; };
 		FA09836F15FC433D006786CA /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09836E15FC433D006786CA /* star.png */; };
 		FA0FAD1A16013DA300457E9D /* particle1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0FAD1916013DA300457E9D /* particle1.png */; };
 		FA0FAD1D160161BB00457E9D /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0FAD1C160161BB00457E9D /* drop.png */; };
@@ -189,6 +190,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA08B67C1608342C00B65144 /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
+		FA08B67D1608342C00B65144 /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButton.m; sourceTree = "<group>"; };
 		FA09836E15FC433D006786CA /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		FA0FAD1916013DA300457E9D /* particle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle1.png; sourceTree = "<group>"; };
 		FA0FAD1C160161BB00457E9D /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 		FA4F5CF91607131100843AE3 /* button */ = {
 			isa = PBXGroup;
 			children = (
+				FA08B67C1608342C00B65144 /* MenuButton.h */,
+				FA08B67D1608342C00B65144 /* MenuButton.m */,
 				FAF13CDB15EC14F60064F37E /* SneakyButton.h */,
 				FAF13CDC15EC14F60064F37E /* SneakyButton.m */,
 				FAF13CDD15EC14F60064F37E /* SneakyButtonSkinnedBase.h */,
@@ -1256,6 +1261,7 @@
 				FA8205C115FE84BB00A6511F /* Weather.m in Sources */,
 				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
 				FAA392F51603D43D008F282B /* CurrentGameStats.m in Sources */,
+				FA08B67E1608342C00B65144 /* MenuButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

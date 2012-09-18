@@ -22,7 +22,6 @@
 @property (nonatomic, retain) CCSprite *activatedSprite;
 @property (nonatomic, retain) CCSprite *disabledSprite;
 @property (nonatomic, retain) CCSprite *pressSprite;
-
 @property (nonatomic, retain) SneakyButton *button;
 
 @end

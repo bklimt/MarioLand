@@ -44,8 +44,7 @@ int points;
 - (id)initWithHUD:(HUDLayer *)hud
 {
     if ((self = [super init])) {
-        NSMutableDictionary* newdictionary = [CurrentGameStats returnNewGameStats];
-        NSLog(@"%@", newdictionary);
+        points += 2;
         CCTMXTiledMap *map = [CCTMXTiledMap tiledMapWithTMXFile:@"level1.tmx"];
         [self addChild:map z:10 tag:666];
         for( CCTMXLayer* child in [map children] ) {
@@ -294,6 +293,7 @@ int points;
         
         if (CGRectContainsPoint([player boundingBox], CGPointMake(goomba.position.x + 20, goomba.position.y))) {
             [goomba stopAllActions];
+            points += 1;
             id blinker = [CCBlink actionWithDuration: 1.0 blinks: 10];
             id callback = [CCCallFuncN actionWithTarget:self selector:@selector(removeGoomba:)];
             id sequence = [CCSequence actions:blinker, callback, nil];
@@ -339,6 +339,7 @@ int points;
 }
 
 -(void)marioHitFlash {
+    hits += 1;
     CCFiniteTimeAction* blinker = [CCBlink actionWithDuration: 2 blinks: 10];
     id showMario = [CCShow action];
     id sequence = [CCSequence actions:blinker, showMario, nil];

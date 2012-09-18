@@ -24,7 +24,6 @@ CCParticleMeteor *breath;
 CCSprite* marioFeet;
 CCSprite* marioFullImage;
 CCRepeatForever *repeat;
-int points;
 
 @implementation GameScene
 @synthesize anim;

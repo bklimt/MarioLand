@@ -54,8 +54,20 @@
 }
 
 -(void)openGameMenu {
+    
+    if ([VGVunglePub adIsAvailable] == TRUE) {
+        NSLog(@"AD IS AVAILABLE");
+        UIViewController* myView = [[UIViewController alloc]init];
+        [myView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [VGVunglePub playModalAd:myView animated:FALSE];
+    }
+    else {
+        NSLog(@"NO AD YET");
+    }
+    
     isPaused ^= YES;
     return (isPaused == NO) ? [[CCDirector sharedDirector] pause] : [[CCDirector sharedDirector] resume];
+
 }
 
 @end

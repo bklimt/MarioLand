@@ -45,9 +45,6 @@
         [pageTwo addChild:menu];
         CCScrollLayer *scroller = [[CCScrollLayer alloc] initWithLayers:[NSMutableArray arrayWithObjects: pageOne,pageTwo,nil] widthOffset: 230];
         [self addChild:scroller];
-        
-        
-        
     }
 
     return self;

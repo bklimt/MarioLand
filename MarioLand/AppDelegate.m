@@ -86,6 +86,8 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    
+    [self vungleStart];
 	
 	return YES;
 }
@@ -126,6 +128,7 @@
 // application will be killed
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [VGVunglePub stop];
 	CC_DIRECTOR_END();
 }
 
@@ -148,5 +151,23 @@
 
 	[super dealloc];
 }
+
+
+-(void)vungleStart
+{
+    VGUserData*  data  = [VGUserData defaultUserData];
+    NSString*    appID = @"vungleTest";
+    
+    // set up config data
+    data.age             = 8;
+    data.gender          = VGGenderFemale;
+    data.adOrientation   = VGAdOrientationLandscape;
+    data.locationEnabled = TRUE;
+    
+    // start vungle publisher library
+    [VGVunglePub startWithPubAppID:appID userData:data];
+    [VGVunglePub allowAutoRotate:FALSE];
+}
+
 @end
 

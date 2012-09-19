@@ -72,7 +72,8 @@
 }
 
 -(void)toggleGameOverlay {
-    self.overlay = [CCSprite spriteWithFile:@"box.png"];
+    self.overlay = [CCSprite spriteWithFile:@"bluebox.png"];
+    self.overlay.opacity = 200;
     self.overlay.position = CGPointMake(240, 160);
     if (self.overlay != nil) {
     (isPaused == NO) ? [self.parent removeChildByTag:10 cleanup:false] : [self.parent addChild:self.overlay z:20 tag:10];

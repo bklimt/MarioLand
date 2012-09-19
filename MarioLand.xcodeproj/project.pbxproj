@@ -26,7 +26,7 @@
 		FA1D62B51609002C000B225E /* vg_button_mute_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1D62B21609002C000B225E /* vg_button_mute_selected.png */; };
 		FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
 		FA1D62C216090BB2000B225E /* libvunglepub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
-		FA29D791160A47450030BC30 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = FA29D790160A47450030BC30 /* box.png */; };
+		FA29D794160A50890030BC30 /* bluebox.png in Resources */ = {isa = PBXBuildFile; fileRef = FA29D793160A50890030BC30 /* bluebox.png */; };
 		FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A8160482D7003EAD2B /* runningfeet.plist */; };
 		FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A9160482D7003EAD2B /* runningfeet.png */; };
 		FA3003AD16048870003EAD2B /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003AC16048870003EAD2B /* mario.png */; };
@@ -233,7 +233,7 @@
 		FA1D62BD160900A6000B225E /* libvunglepub.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvunglepub.a; path = ../vunglepub/bin/libvunglepub.a; sourceTree = "<group>"; };
 		FA1D62C01609025C000B225E /* VGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGConstants.h; path = ../vunglepub/VGConstants.h; sourceTree = "<group>"; };
 		FA1D62C11609025C000B225E /* vunglepub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vunglepub.h; path = ../vunglepub/vunglepub.h; sourceTree = "<group>"; };
-		FA29D790160A47450030BC30 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
+		FA29D793160A50890030BC30 /* bluebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluebox.png; sourceTree = "<group>"; };
 		FA3003A8160482D7003EAD2B /* runningfeet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = runningfeet.plist; sourceTree = "<group>"; };
 		FA3003A9160482D7003EAD2B /* runningfeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningfeet.png; sourceTree = "<group>"; };
 		FA3003AC16048870003EAD2B /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -714,12 +714,12 @@
 				FAF13CF215EC54A00064F37E /* 10 - Sound Effects.mp3 */,
 				FAF13CE615EC51C20064F37E /* grass-land.mp3 */,
 				FAF13CE415EC1DE90064F37E /* firstbutton-pressed.png */,
-				FA29D790160A47450030BC30 /* box.png */,
 				FA09836E15FC433D006786CA /* star.png */,
 				FAF13CE015EC19CE0064F37E /* firstbutton.png */,
 				FAB556C115EB6D5700D9D9C6 /* joystick.png */,
 				FAB556BF15EB6AA400D9D9C6 /* trees2-background.png */,
 				FAB556BB15EB663900D9D9C6 /* ground-image.png */,
+				FA29D793160A50890030BC30 /* bluebox.png */,
 				FAB556B715EB5B1000D9D9C6 /* trees-background.png */,
 				FAB556B315EB41E300D9D9C6 /* mario-starred.png */,
 				FAB556B415EB41E300D9D9C6 /* mario-starred2.png */,
@@ -1217,7 +1217,7 @@
 				FA1D62B41609002C000B225E /* vg_button_mute_plain.png in Resources */,
 				FA1D62B51609002C000B225E /* vg_button_mute_selected.png in Resources */,
 				FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */,
-				FA29D791160A47450030BC30 /* box.png in Resources */,
+				FA29D794160A50890030BC30 /* bluebox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,10 @@
     CGPoint center;
 	CGRect bounds;
     bool isPaused;
+    CCSprite* overlay;
 }
+
+@property (nonatomic, retain) CCSprite* overlay;
 -(id)initWithRect:(CGRect)rect;
 
 

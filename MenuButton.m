@@ -10,6 +10,7 @@
 
 
 @implementation MenuButton
+@synthesize overlay;
 
 - (void) onEnterTransitionDidFinish
 {
@@ -55,19 +56,27 @@
 
 -(void)openGameMenu {
     
-    if ([VGVunglePub adIsAvailable] == TRUE) {
-        NSLog(@"AD IS AVAILABLE");
-        UIViewController* myView = [[UIViewController alloc]init];
-        [myView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-        [VGVunglePub playModalAd:myView animated:FALSE];
-    }
-    else {
-        NSLog(@"NO AD YET");
-    }
+//    if ([VGVunglePub adIsAvailable] == TRUE) {
+//        UIViewController* myView = [[UIViewController alloc]init];
+//        [myView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+//        [VGVunglePub playModalAd:myView animated:FALSE];
+//    }
+//    else {
+//        NSLog(@"NO AD YET");
+//    }
     
     isPaused ^= YES;
-    return (isPaused == NO) ? [[CCDirector sharedDirector] pause] : [[CCDirector sharedDirector] resume];
+    [self toggleGameOverlay];
+    return (isPaused == YES) ? [[CCDirector sharedDirector] pause] : [[CCDirector sharedDirector] resume];
 
+}
+
+-(void)toggleGameOverlay {
+    self.overlay = [CCSprite spriteWithFile:@"box.png"];
+    self.overlay.position = CGPointMake(240, 160);
+    if (self.overlay != nil) {
+    (isPaused == NO) ? [self.parent removeChildByTag:10 cleanup:false] : [self.parent addChild:self.overlay z:20 tag:10];
+    }
 }
 
 @end

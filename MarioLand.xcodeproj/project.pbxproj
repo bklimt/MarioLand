@@ -26,6 +26,7 @@
 		FA1D62B51609002C000B225E /* vg_button_mute_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FA1D62B21609002C000B225E /* vg_button_mute_selected.png */; };
 		FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
 		FA1D62C216090BB2000B225E /* libvunglepub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
+		FA29D791160A47450030BC30 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = FA29D790160A47450030BC30 /* box.png */; };
 		FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A8160482D7003EAD2B /* runningfeet.plist */; };
 		FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A9160482D7003EAD2B /* runningfeet.png */; };
 		FA3003AD16048870003EAD2B /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003AC16048870003EAD2B /* mario.png */; };
@@ -220,18 +221,19 @@
 		FA1D62A61608FDEE000B225E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FA1D62A81608FDF4000B225E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FA1D62AA1608FE01000B225E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FA1D62B01609002C000B225E /* vg_button_close.png */ = {isa = PBXFileReference; lastKnownFileType = file; name = vg_button_close.png; path = ../vunglepub/resources/vg_button_close.png; sourceTree = "<group>"; };
-		FA1D62B11609002C000B225E /* vg_button_mute_plain.png */ = {isa = PBXFileReference; lastKnownFileType = file; name = vg_button_mute_plain.png; path = ../vunglepub/resources/vg_button_mute_plain.png; sourceTree = "<group>"; };
-		FA1D62B21609002C000B225E /* vg_button_mute_selected.png */ = {isa = PBXFileReference; lastKnownFileType = file; name = vg_button_mute_selected.png; path = ../vunglepub/resources/vg_button_mute_selected.png; sourceTree = "<group>"; };
-		FA1D62B716090087000B225E /* VGAdType.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGAdType.h; path = ../vunglepub/headers/VGAdType.h; sourceTree = "<group>"; };
-		FA1D62B816090087000B225E /* VGAssertMacros.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGAssertMacros.h; path = ../vunglepub/headers/VGAssertMacros.h; sourceTree = "<group>"; };
-		FA1D62B916090087000B225E /* VGPlayData.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGPlayData.h; path = ../vunglepub/headers/VGPlayData.h; sourceTree = "<group>"; };
-		FA1D62BA16090087000B225E /* VGStatusData.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGStatusData.h; path = ../vunglepub/headers/VGStatusData.h; sourceTree = "<group>"; };
-		FA1D62BB16090087000B225E /* VGUserData.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGUserData.h; path = ../vunglepub/headers/VGUserData.h; sourceTree = "<group>"; };
-		FA1D62BC16090087000B225E /* VGVunglePub.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGVunglePub.h; path = ../vunglepub/headers/VGVunglePub.h; sourceTree = "<group>"; };
+		FA1D62B01609002C000B225E /* vg_button_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_button_close.png; path = ../vunglepub/resources/vg_button_close.png; sourceTree = "<group>"; };
+		FA1D62B11609002C000B225E /* vg_button_mute_plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_button_mute_plain.png; path = ../vunglepub/resources/vg_button_mute_plain.png; sourceTree = "<group>"; };
+		FA1D62B21609002C000B225E /* vg_button_mute_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_button_mute_selected.png; path = ../vunglepub/resources/vg_button_mute_selected.png; sourceTree = "<group>"; };
+		FA1D62B716090087000B225E /* VGAdType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGAdType.h; path = ../vunglepub/headers/VGAdType.h; sourceTree = "<group>"; };
+		FA1D62B816090087000B225E /* VGAssertMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGAssertMacros.h; path = ../vunglepub/headers/VGAssertMacros.h; sourceTree = "<group>"; };
+		FA1D62B916090087000B225E /* VGPlayData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGPlayData.h; path = ../vunglepub/headers/VGPlayData.h; sourceTree = "<group>"; };
+		FA1D62BA16090087000B225E /* VGStatusData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGStatusData.h; path = ../vunglepub/headers/VGStatusData.h; sourceTree = "<group>"; };
+		FA1D62BB16090087000B225E /* VGUserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGUserData.h; path = ../vunglepub/headers/VGUserData.h; sourceTree = "<group>"; };
+		FA1D62BC16090087000B225E /* VGVunglePub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGVunglePub.h; path = ../vunglepub/headers/VGVunglePub.h; sourceTree = "<group>"; };
 		FA1D62BD160900A6000B225E /* libvunglepub.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvunglepub.a; path = ../vunglepub/bin/libvunglepub.a; sourceTree = "<group>"; };
-		FA1D62C01609025C000B225E /* VGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = VGConstants.h; path = ../vunglepub/VGConstants.h; sourceTree = "<group>"; };
-		FA1D62C11609025C000B225E /* vunglepub.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = vunglepub.h; path = ../vunglepub/vunglepub.h; sourceTree = "<group>"; };
+		FA1D62C01609025C000B225E /* VGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGConstants.h; path = ../vunglepub/VGConstants.h; sourceTree = "<group>"; };
+		FA1D62C11609025C000B225E /* vunglepub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vunglepub.h; path = ../vunglepub/vunglepub.h; sourceTree = "<group>"; };
+		FA29D790160A47450030BC30 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		FA3003A8160482D7003EAD2B /* runningfeet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = runningfeet.plist; sourceTree = "<group>"; };
 		FA3003A9160482D7003EAD2B /* runningfeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningfeet.png; sourceTree = "<group>"; };
 		FA3003AC16048870003EAD2B /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 				FAF13CF215EC54A00064F37E /* 10 - Sound Effects.mp3 */,
 				FAF13CE615EC51C20064F37E /* grass-land.mp3 */,
 				FAF13CE415EC1DE90064F37E /* firstbutton-pressed.png */,
+				FA29D790160A47450030BC30 /* box.png */,
 				FA09836E15FC433D006786CA /* star.png */,
 				FAF13CE015EC19CE0064F37E /* firstbutton.png */,
 				FAB556C115EB6D5700D9D9C6 /* joystick.png */,
@@ -1214,6 +1217,7 @@
 				FA1D62B41609002C000B225E /* vg_button_mute_plain.png in Resources */,
 				FA1D62B51609002C000B225E /* vg_button_mute_selected.png in Resources */,
 				FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */,
+				FA29D791160A47450030BC30 /* box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,8 @@
     NSLog(@"UNARCHIVED GAME STATE POSITION:%@",NSStringFromCGPoint([unarchivedGameData playerSavedPosition]));
     NSLog(@"UNARCHIVED GAME STATE POINTS:%i",[unarchivedGameData playerSavedPoints]);
     NSLog(@"UNARCHIVED GAME STATE HITS:%i",[unarchivedGameData playerSavedHits]);
+    
+
 
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

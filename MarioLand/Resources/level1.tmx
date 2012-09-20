@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="my_mario_tileset" tilewidth="32" tileheight="32">
+  <image source="my_mario_tileset.png" width="1024" height="1024"/>
+  <tile id="136">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="TileLayer1" width="100" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA93WS1ITQRzH8c6wAqJAdPAMmoAaknAGkLCRm8ANZMNTBKuAKna6EQUUWXIB5Y1W4cILyPtVBQsWfKeSrnSa7kkKMgnmV/Wp/ifTk9T0f15C5BJx8hWTOPPaDHNna4SoZwyLm2PQmQwJMYXpUBn+LMB4a2tiS5JtKZ/tUcQMY1cA6/QG/Ya6GiLP+YSTW/N2PCnymjGlI5Sv1PmAj4a6WiJ74q1dZ3b9vPM6je5Qpj/tt+iP7If3m6/+8/uJzGv0WL4rNMrMOBlvqcfwDuOYwHtlntoPL7Iffvcq23NDH9OG3x2gHsQQhjGC0YIrUtn0os/yXaFRZtnJWKD+im9YxHcsKfP0fsjzWr1W9NieG/qo7i/rT9Sz+IwvmMN80Stz97hl/C81f52MDepNbGEbv/BbmafeW9Tarx+22PZX6x/M+4kVrGIN6yU65vueK/pxxHiME5ziDOfavFL1xLSf/vkf83axh30c4LBEx+sXV1Tu2lDTwBo0ogkRPMJjbX2L6YdLb5sLvIOZ3qv066MWdahHGA/wMMDnflITdHbwx2f7c471BV4ijjYkDP3Q34vUNdTfi22x7a96imeIIoYWtAbYD9fAi9ebVLZOGfYT2jy/XiaVeRe4zNaSmmvVTGLYoA8AAA==
+  </data>
+ </layer>
+ <objectgroup name="ObjectLayer1" width="100" height="10">
+  <object name="UpsideGreenTunnel" type="Tunnel" x="1155" y="138" width="188" height="180">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="BrownBlock" type="Block" x="670" y="128" width="324" height="66">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="BrownBlock" type="Block" x="736" y="2" width="194" height="62">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="LeftScreenBorder" type="ScreenBorder" x="194" y="182" height="131">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="ObjectBlock" type="Block" x="1598" y="32" width="68" height="66">
+   <properties>
+    <property name="ItemBox" value="True"/>
+   </properties>
+  </object>
+  <object name="ObjectBlock" type="Block" x="1692" y="32" width="72" height="66">
+   <properties>
+    <property name="ItemBox" value="True"/>
+   </properties>
+  </object>
+  <object name="BlueBlock" type="Block" x="2606" y="94" width="35" height="68">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="BlueBlock" type="Block" x="2752" y="96" width="322" height="66">
+   <properties>
+    <property name="Collidable" value="True"/>
+   </properties>
+  </object>
+  <object name="Mushroom" type="PowerUp" x="2936" y="256" width="82" height="64">
+   <properties>
+    <property name="PowerUp" value="True"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

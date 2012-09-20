@@ -95,7 +95,6 @@
 -(void)saveButtonTapped:(id)sender {
     NSLog(@"got to save button.");
     SavedGameState* newSavedState = [SavedGameState new];
-    
     NSString *localPath = @"Documents/gamearchive";
     NSString *fullPath = [NSHomeDirectory() stringByAppendingPathComponent:localPath];
     [NSKeyedArchiver archiveRootObject:newSavedState toFile:fullPath];

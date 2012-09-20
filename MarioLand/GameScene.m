@@ -59,13 +59,21 @@ CCRepeatForever *repeat;
         tex1 = [[CCTextureCache sharedTextureCache] addImage:@"mario.png"];
         tex2 = [[CCTextureCache sharedTextureCache] addImage:@"mario3.png"];
         tex4 = [[CCTextureCache sharedTextureCache] addImage:@"mariostomp.png"];
-        player = [CCSprite spriteWithTexture:tex1];        [self addChild:player z:10 tag:1];
+        player = [CCSprite spriteWithTexture:tex1];
+        [self addChild:player z:10 tag:1];
         gameWorldSize = CGRectMake(0, 0, 4000, 1000);
         CCFollow *followmario = [CCFollow actionWithTarget:player worldBoundary:gameWorldSize];
         [self runAction:followmario];
         
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        player.position = CGPointMake((int)screenSize.width / 2, (int)screenSize.height/ 6);
+        
+        
+        
+        NSString *localPath = @"Documents/gamearchive";
+        NSString *fullPath = [NSHomeDirectory() stringByAppendingPathComponent:localPath];
+        SavedGameState* unarchivedGameData = [NSKeyedUnarchiver unarchiveObjectWithFile:fullPath];
+        CGPoint resumedPoint = [unarchivedGameData playerSavedPosition];
+        (userSelectedResumeGame == NO) ? (player.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6)) : (player.position = resumedPoint);
         
         _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];

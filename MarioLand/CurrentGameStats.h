@@ -10,6 +10,7 @@ int hits;
 int points;
 int secondsPlayed;
 CGPoint currentPlayerPoint;
+bool userSelectedResumeGame;
 
 @interface CurrentGameStats : NSObject {
 
@@ -19,5 +20,6 @@ CGPoint currentPlayerPoint;
 @property (nonatomic, assign) int hits;
 @property (nonatomic, assign) int points;
 @property (nonatomic, assign) int secondsPlayed;
+@property (nonatomic) bool userSelectedResumeGame;
 
 @end

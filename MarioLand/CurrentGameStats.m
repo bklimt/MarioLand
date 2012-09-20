@@ -15,6 +15,7 @@
 @synthesize points;
 @synthesize secondsPlayed;
 @synthesize currentPlayerPoint;
+@synthesize userSelectedResumeGame;
 
 
 @end

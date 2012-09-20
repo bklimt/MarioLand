@@ -8,6 +8,7 @@
 
 #import "MainMenu.h"
 #import "GameScene.h"
+#import "CurrentGameStats.h"
 
 
 @implementation MainMenu
@@ -74,11 +75,13 @@
 }
 
 -(void)testCallback:(id)sender {
+    userSelectedResumeGame = NO;
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameScene scene]]];
 }
 
 -(void)resumeGameCallback:(id)sender {
-    NSLog(@"TESTING CALLBACK FOR RESUME");
+    userSelectedResumeGame = YES;
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5f scene:[GameScene scene]]];
 }
 
 @end

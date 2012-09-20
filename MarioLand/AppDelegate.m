@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
+#import "SavedGameState.h"
 
 @implementation AppController
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *localPath = @"Documents/gamearchive";
+    NSString *fullPath = [NSHomeDirectory() stringByAppendingPathComponent:localPath];
+    SavedGameState* unarchivedGameData = [NSKeyedUnarchiver unarchiveObjectWithFile:fullPath];
+    NSLog(@"UNARCHIVED GAME STATE POSITION:%@",NSStringFromCGPoint([unarchivedGameData playerSavedPosition]));
+    NSLog(@"UNARCHIVED GAME STATE POINTS:%i",[unarchivedGameData playerSavedPoints]);
+    NSLog(@"UNARCHIVED GAME STATE HITS:%i",[unarchivedGameData playerSavedHits]);
+
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

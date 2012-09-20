@@ -11,9 +11,10 @@
 #import "HUDLayer.h"
 #import "Weather.h"
 
+CCSprite* player;
 
 @interface GameScene : CCLayer {
-    CCSprite* player;
+
     CGPoint playerVelocity;
     CGPoint newPosition;
     CGRect gameWorldSize;
@@ -28,7 +29,7 @@
 }
 
 @property (nonatomic, assign) CCAnimation *anim;
-@property (nonatomic, strong) CCSprite *player;
+@property (nonatomic, copy) CCSprite *player;
 
 +(id)scene;
 

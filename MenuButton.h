@@ -7,6 +7,8 @@
 //
 
 #import "cocos2d.h"
+#import "SavedGameState.h"
+
 
 @interface MenuButton : CCNode <CCTargetedTouchDelegate> {
     CGPoint center;
@@ -16,7 +18,9 @@
 }
 
 @property (nonatomic, retain) CCSprite* overlay;
+
 -(id)initWithRect:(CGRect)rect;
+
 
 
 @end

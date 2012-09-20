@@ -43,7 +43,6 @@ CCRepeatForever *repeat;
 - (id)initWithHUD:(HUDLayer *)hud
 {
     if ((self = [super init])) {
-        points += 2;
         CCTMXTiledMap *map = [CCTMXTiledMap tiledMapWithTMXFile:@"level1.tmx"];
         [self addChild:map z:10 tag:666];
         for( CCTMXLayer* child in [map children] ) {
@@ -60,15 +59,13 @@ CCRepeatForever *repeat;
         tex1 = [[CCTextureCache sharedTextureCache] addImage:@"mario.png"];
         tex2 = [[CCTextureCache sharedTextureCache] addImage:@"mario3.png"];
         tex4 = [[CCTextureCache sharedTextureCache] addImage:@"mariostomp.png"];
-        player = [CCSprite spriteWithTexture:tex1];
-
-        [self addChild:player z:10 tag:1];
+        player = [CCSprite spriteWithTexture:tex1];        [self addChild:player z:10 tag:1];
         gameWorldSize = CGRectMake(0, 0, 4000, 1000);
         CCFollow *followmario = [CCFollow actionWithTarget:player worldBoundary:gameWorldSize];
         [self runAction:followmario];
         
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        player.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6);
+        player.position = CGPointMake((int)screenSize.width / 2, (int)screenSize.height/ 6);
         
         _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];
@@ -124,7 +121,6 @@ CCRepeatForever *repeat;
         [marioFullImage addChild:breath];
         breath.totalParticles = 0;
         breath.position = ccp(player.position.x - 200, player.position.y);
-
         [_hud initFirstButton];
         [_hud initJoystick];
         [_hud initMenuButton];
@@ -329,7 +325,6 @@ CCRepeatForever *repeat;
 -(void)jumpMario {
     float movePlayerPosition = ((player.flipX == YES) ? player.position.x - 100 : player.position.x + 100);
     id jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (movePlayerPosition, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
-    
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];
     CCSequence* jumpSequence = [CCSequence actions:jump1, nil];
     marioFullImage.visible = NO;
@@ -360,6 +355,7 @@ CCRepeatForever *repeat;
 
 -(void)spritePosition {
     if (leftJoystick.degrees >= 90 && leftJoystick.degrees < 270) {
+        [self currentPlayerPosition];
         player.flipX = YES;
         marioFullImage.flipX = YES;
         marioFullImage.opacity = 0;
@@ -378,6 +374,7 @@ CCRepeatForever *repeat;
         
     }
     else {
+        [self currentPlayerPosition];
         player.flipX = NO;
         marioFullImage.flipX = NO;
         marioFullImage.opacity = 0;
@@ -444,6 +441,12 @@ CCRepeatForever *repeat;
     width = [[dict valueForKey:@"width"] floatValue];
     height = [[dict valueForKey:@"height"] floatValue];
     return CGRectMake(x, y, width, height);
+}
+
+-(CGPoint)currentPlayerPosition {
+    currentPlayerPoint = player.position;
+    NSLog(@"%@", NSStringFromCGPoint(currentPlayerPoint));
+    return currentPlayerPoint;
 }
 
 @end

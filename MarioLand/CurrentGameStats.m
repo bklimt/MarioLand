@@ -14,6 +14,7 @@
 @synthesize hits;
 @synthesize points;
 @synthesize secondsPlayed;
+@synthesize currentPlayerPoint;
 
 
 @end

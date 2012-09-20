@@ -27,6 +27,8 @@
 		FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
 		FA1D62C216090BB2000B225E /* libvunglepub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1D62BD160900A6000B225E /* libvunglepub.a */; };
 		FA29D794160A50890030BC30 /* bluebox.png in Resources */ = {isa = PBXBuildFile; fileRef = FA29D793160A50890030BC30 /* bluebox.png */; };
+		FA29D79A160A678B0030BC30 /* toad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA29D799160A678B0030BC30 /* toad.png */; };
+		FA29D79D160A6AED0030BC30 /* SavedGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA29D79C160A6AED0030BC30 /* SavedGameState.m */; };
 		FA3003AA160482D7003EAD2B /* runningfeet.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A8160482D7003EAD2B /* runningfeet.plist */; };
 		FA3003AB160482D7003EAD2B /* runningfeet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003A9160482D7003EAD2B /* runningfeet.png */; };
 		FA3003AD16048870003EAD2B /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3003AC16048870003EAD2B /* mario.png */; };
@@ -234,6 +236,9 @@
 		FA1D62C01609025C000B225E /* VGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VGConstants.h; path = ../vunglepub/VGConstants.h; sourceTree = "<group>"; };
 		FA1D62C11609025C000B225E /* vunglepub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vunglepub.h; path = ../vunglepub/vunglepub.h; sourceTree = "<group>"; };
 		FA29D793160A50890030BC30 /* bluebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluebox.png; sourceTree = "<group>"; };
+		FA29D799160A678B0030BC30 /* toad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toad.png; sourceTree = "<group>"; };
+		FA29D79B160A6AED0030BC30 /* SavedGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SavedGameState.h; path = ../SavedGameState.h; sourceTree = "<group>"; };
+		FA29D79C160A6AED0030BC30 /* SavedGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedGameState.m; path = ../SavedGameState.m; sourceTree = "<group>"; };
 		FA3003A8160482D7003EAD2B /* runningfeet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = runningfeet.plist; sourceTree = "<group>"; };
 		FA3003A9160482D7003EAD2B /* runningfeet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningfeet.png; sourceTree = "<group>"; };
 		FA3003AC16048870003EAD2B /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario.png; sourceTree = "<group>"; };
@@ -674,6 +679,8 @@
 				FAB5568E15EAD82800D9D9C6 /* AppDelegate.m */,
 				FAB5569315EAD82800D9D9C6 /* IntroLayer.h */,
 				FAB5569415EAD82800D9D9C6 /* IntroLayer.m */,
+				FA29D79B160A6AED0030BC30 /* SavedGameState.h */,
+				FA29D79C160A6AED0030BC30 /* SavedGameState.m */,
 				FAB5551615EAD82000D9D9C6 /* Resources */,
 				FAB5553015EAD82000D9D9C6 /* libs */,
 				FAB5568915EAD82800D9D9C6 /* Supporting Files */,
@@ -691,6 +698,7 @@
 				FAA9AE821602AFC40038E1AE /* mariocloud2.png */,
 				FA3003A8160482D7003EAD2B /* runningfeet.plist */,
 				FA3003A9160482D7003EAD2B /* runningfeet.png */,
+				FA29D799160A678B0030BC30 /* toad.png */,
 				FAA9AE831602AFC50038E1AE /* mariocloud1.png */,
 				FAA9AE7F16029BEA0038E1AE /* menubg2.png */,
 				FAA9AE7C16028C8A0038E1AE /* menubg.png */,
@@ -1218,6 +1226,7 @@
 				FA1D62B51609002C000B225E /* vg_button_mute_selected.png in Resources */,
 				FA1D62BE160900A6000B225E /* libvunglepub.a in Resources */,
 				FA29D794160A50890030BC30 /* bluebox.png in Resources */,
+				FA29D79A160A678B0030BC30 /* toad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1344,6 +1353,7 @@
 				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
 				FAA392F51603D43D008F282B /* CurrentGameStats.m in Sources */,
 				FA08B67E1608342C00B65144 /* MenuButton.m in Sources */,
+				FA29D79D160A6AED0030BC30 /* SavedGameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

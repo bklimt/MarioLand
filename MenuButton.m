@@ -78,6 +78,27 @@
     if (self.overlay != nil) {
     (isPaused == NO) ? [self.parent removeChildByTag:10 cleanup:false] : [self.parent addChild:self.overlay z:20 tag:10];
     }
+    
+    CCMenuItem *saveButton = [CCMenuItemImage
+                                itemWithNormalImage:@"toad.png" selectedImage:@"toad.png"
+                                target:self selector:@selector(saveButtonTapped:)];
+    saveButton.position = ccp(240, 160);
+    CCLabelTTF* labelForMenu = [CCLabelTTF labelWithString:@"Save" fontName:@"Delfino" fontSize:18];
+    labelForMenu.anchorPoint = ccp(0,0);
+    labelForMenu.position = ccp(32, -20);
+    [saveButton addChild:labelForMenu];
+    CCMenu *PauseMenu = [CCMenu menuWithItems:saveButton, nil];
+    PauseMenu.position = CGPointZero;
+    [self.parent addChild:PauseMenu z:30];
+}
+
+-(void)saveButtonTapped:(id)sender {
+    NSLog(@"got to save button.");
+    SavedGameState* newSavedState = [SavedGameState new];
+    
+    NSString *localPath = @"Documents/gamearchive";
+    NSString *fullPath = [NSHomeDirectory() stringByAppendingPathComponent:localPath];
+    [NSKeyedArchiver archiveRootObject:newSavedState toFile:fullPath];
 }
 
 @end

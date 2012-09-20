@@ -33,6 +33,7 @@
 		FA4F5CF51607075D00843AE3 /* mariostomp.png in Resources */ = {isa = PBXBuildFile; fileRef = FA4F5CF41607075D00843AE3 /* mariostomp.png */; };
 		FA4F5CF816070B7600843AE3 /* yah.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4F5CF716070B7600843AE3 /* yah.wav */; };
 		FA64B2FE15FDCB660072FBAA /* stomp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA64B2FD15FDCB660072FBAA /* stomp.mp3 */; };
+		FA8BF475160BD27900FD323D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8BF474160BD27900FD323D /* Constants.m */; };
 		FA8FA4D915F0975C00FB653C /* mario3.png in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4D815F0975C00FB653C /* mario3.png */; };
 		FA8FA4DC15F098A000FB653C /* jumping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DB15F098A000FB653C /* jumping.mp3 */; };
 		FA8FA4E015F099CF00FB653C /* ghosts3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */; };
@@ -231,6 +232,8 @@
 		FA4F5CF41607075D00843AE3 /* mariostomp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariostomp.png; sourceTree = "<group>"; };
 		FA4F5CF716070B7600843AE3 /* yah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yah.wav; sourceTree = "<group>"; };
 		FA64B2FD15FDCB660072FBAA /* stomp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stomp.mp3; sourceTree = "<group>"; };
+		FA8BF473160BD27800FD323D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
+		FA8BF474160BD27900FD323D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
 		FA8FA4D815F0975C00FB653C /* mario3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario3.png; sourceTree = "<group>"; };
 		FA8FA4DB15F098A000FB653C /* jumping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jumping.mp3; sourceTree = "<group>"; };
 		FA8FA4DF15F099CF00FB653C /* ghosts3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghosts3.mp3; sourceTree = "<group>"; };
@@ -641,16 +644,18 @@
 		FAB5551515EAD81F00D9D9C6 /* MarioLand */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D62BF16090250000B225E /* VGSDK */,
+				FA1D62B61609007D000B225E /* VGHeaders */,
 				FADCAAB1160B819400572754 /* SavedGameState.h */,
 				FADCAAB2160B819400572754 /* SavedGameState.m */,
+				FA8BF473160BD27800FD323D /* Constants.h */,
+				FA8BF474160BD27900FD323D /* Constants.m */,
 				FADCAAAF160B818700572754 /* GameScene.h */,
 				FADCAAB0160B818700572754 /* GameScene.m */,
 				FADCAAAD160B817E00572754 /* GoombaBasic.h */,
 				FADCAAAE160B817E00572754 /* GoombaBasic.m */,
 				FADCAAAA160B816C00572754 /* Weather.h */,
 				FADCAAAB160B816C00572754 /* Weather.m */,
-				FA1D62BF16090250000B225E /* VGSDK */,
-				FA1D62B61609007D000B225E /* VGHeaders */,
 				FA1BCFBC16023C4900AD621C /* MainMenu.h */,
 				FA1BCFBD16023C4900AD621C /* MainMenu.m */,
 				FA12247515ED7DA100CD8618 /* HUDLayer.h */,
@@ -1314,6 +1319,7 @@
 				FA12247715ED7DA100CD8618 /* HUDLayer.m in Sources */,
 				FA1BCFBE16023C4900AD621C /* MainMenu.m in Sources */,
 				FAA392F51603D43D008F282B /* CurrentGameStats.m in Sources */,
+				FA8BF475160BD27900FD323D /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

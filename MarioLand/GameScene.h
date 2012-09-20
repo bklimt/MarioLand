@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "HUDLayer.h"
 #import "Weather.h"
+#import "Constants.h"
 
 CCSprite* player;
 

@@ -64,16 +64,10 @@ CCRepeatForever *repeat;
         gameWorldSize = CGRectMake(0, 0, 4000, 1000);
         CCFollow *followmario = [CCFollow actionWithTarget:player worldBoundary:gameWorldSize];
         [self runAction:followmario];
-        
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        
-        
-        
-        NSString *localPath = @"Documents/gamearchive";
-        NSString *fullPath = [NSHomeDirectory() stringByAppendingPathComponent:localPath];
-        SavedGameState* unarchivedGameData = [NSKeyedUnarchiver unarchiveObjectWithFile:fullPath];
+
+        SavedGameState* unarchivedGameData = [NSKeyedUnarchiver unarchiveObjectWithFile:[Constants pathToArchivedGame]];
         CGPoint resumedPoint = [unarchivedGameData playerSavedPosition];
-        (userSelectedResumeGame == NO) ? (player.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6)) : (player.position = resumedPoint);
+        (userSelectedResumeGame == NO) ? (player.position = [Constants playerStartingPos]) : (player.position = resumedPoint);
         
         _backgroundNode = [Weather node];
         ground = [CCSprite spriteWithFile:@"ground-image.png"];
@@ -111,7 +105,7 @@ CCRepeatForever *repeat;
         }
         
         marioFeet = [CCSprite spriteWithSpriteFrameName:@"foot1.png"];
-        marioFeet.position = ccp(300.0f, screenSize.height / 6 + 5);
+        marioFeet.position = ccp(300.0f, [Constants playerStartingPosY] + 5);
         [spriteSheet addChild:marioFeet z:50];
         anim = [CCAnimation animationWithSpriteFrames:animFrames delay:0.05f];
         repeat = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:anim]];
@@ -120,7 +114,7 @@ CCRepeatForever *repeat;
         marioFeet.visible = NO;
         
         marioFullImage = [CCSprite spriteWithTexture:tex3];
-        marioFullImage.position = CGPointMake(screenSize.width / 2, screenSize.height/ 6);
+        marioFullImage.position = [Constants playerStartingPos];
         [self addChild:marioFullImage z:11];
 
         
@@ -168,10 +162,10 @@ CCRepeatForever *repeat;
         if (isColliding == NO) {
             newPosition = ccp(player.position.x + scaledVelocity.x + deltaTime, player.position.y);
         }
-        else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x > 0) {
+        else if (isColliding == YES && player.position.y == [Constants playerStartingPosY] && scaledVelocity.x > 0) {
             newPosition = ccp(player.position.x - 4, player.position.y);
         }
-        else if (isColliding == YES && player.position.y == [CCDirector sharedDirector].winSize.height / 6 && scaledVelocity.x < 0) {
+        else if (isColliding == YES && player.position.y == [Constants playerStartingPosY] && scaledVelocity.x < 0) {
             newPosition = ccp(player.position.x + 4, player.position.y);
         }
         else {
@@ -213,30 +207,24 @@ CCRepeatForever *repeat;
 
 
 -(void) initGoombas {
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
     GoombaBasic* tempGoomba = [GoombaBasic new];
     float imageWidth = [tempGoomba texture].contentSize.width;
-    int numGoombas = screenSize.width / imageWidth;
-    // Initialize the goombas array using alloc.
-    
+    int numGoombas = [Constants screenTotalWidth] / imageWidth;
+
     goombas = [[CCArray alloc] initWithCapacity:numGoombas];
     for (int i = 0; i < numGoombas; i++) {
         GoombaBasic* goomba = [GoombaBasic new];
         [self addChild:goomba z:3 tag:2];
-        // Also add the goomba to the goombas array.
         [goombas addObject:goomba]; }
-    // call the method to reposition all goombas
     [self resetGoombas];
 }
 
 -(void) resetGoombas {
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    // Get any goomba to get its image width
     int numGoombas = [goombas count];
     for (int i = 0; i < numGoombas; i++) {
         goomba = [goombas objectAtIndex:i];
         goomba.position = CGPointMake(player.position.x + 700,
-        screenSize.height / 7);
+        [Constants screenTotalHeight] / 7);
         [goomba stopAllActions];
     }
     [self unschedule:@selector(goombasUpdate:)];
@@ -275,8 +263,8 @@ CCRepeatForever *repeat;
     NSAssert([sender isKindOfClass:[CCSprite class]], @"sender is not a CCSprite!");
     goomba = (GoombaBasic*)sender;
     CGPoint pos = goomba.position;
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    pos.x = screenSize.width;
+//    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    pos.x = [Constants screenTotalWidth];
     goomba.position = pos;
 }
 
@@ -306,7 +294,7 @@ CCRepeatForever *repeat;
             goomba.collided = true;
             goomba.scaleY = 0.6;
             goomba.position = CGPointMake(goomba.position.x, goomba.position.y - 5);
-            id jumpOff = [CCJumpTo actionWithDuration:.4 position:ccp(player.position.x + 70, [CCDirector sharedDirector].winSize.height / 6) height:80 jumps:1];
+            id jumpOff = [CCJumpTo actionWithDuration:.4 position:ccp(player.position.x + 70, [Constants playerStartingPosY]) height:80 jumps:1];
             id returnMario = [CCCallFuncN actionWithTarget:self selector:@selector(returnM:)];
             id sequence4 = [CCSequence actions:jumpOff, returnMario, nil];
             [player runAction:sequence4];
@@ -332,7 +320,7 @@ CCRepeatForever *repeat;
 
 -(void)jumpMario {
     float movePlayerPosition = ((player.flipX == YES) ? player.position.x - 100 : player.position.x + 100);
-    id jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (movePlayerPosition, [CCDirector sharedDirector].winSize.height / 6) height:240 jumps:1];
+    id jump1 = [CCJumpTo actionWithDuration:0.6 position:ccp (movePlayerPosition, [Constants playerStartingPosY]) height:240 jumps:1];
     [[SimpleAudioEngine sharedEngine] playEffect:@"jumping.mp3"];
     CCSequence* jumpSequence = [CCSequence actions:jump1, nil];
     marioFullImage.visible = NO;
@@ -408,7 +396,7 @@ CCRepeatForever *repeat;
         
         if (CGRectContainsPoint(rect, CGPointMake(player.position.x, player.position.y + player.boundingBox.size.height))){
             player.position = ccp(player.position.x, player.position.y - 4);
-            id moveBackToLevelGround = [CCJumpTo actionWithDuration:0.1 position:CGPointMake(player.position.x - 6, ([CCDirector sharedDirector].winSize.height / 6)) height:5 jumps:1];
+            id moveBackToLevelGround = [CCJumpTo actionWithDuration:0.1 position:CGPointMake(player.position.x - 6, ([Constants playerStartingPosY])) height:5 jumps:1];
             [player runAction:moveBackToLevelGround];
         }
         
@@ -417,7 +405,7 @@ CCRepeatForever *repeat;
             [player stopAllActions];
 
             
-            if (rect.origin.y < player.position.y && player.position.y > [CCDirector sharedDirector].winSize.height / 6) {
+            if (rect.origin.y < player.position.y && player.position.y > [Constants playerStartingPosY]) {
                 player.position = ccp(player.position.x, rect.origin.y + rect.size.height * 1.6);
             }
             else {
@@ -436,7 +424,7 @@ CCRepeatForever *repeat;
         [player stopAllActions];
         player.position = ccp(player.position.x, player.position.y - 4);
         
-        if (rect.origin.y < player.position.y && player.position.y > [CCDirector sharedDirector].winSize.height / 6) {
+        if (rect.origin.y < player.position.y && player.position.y > [Constants playerStartingPosY]) {
             player.position = ccp(player.position.x, rect.origin.y + rect.size.height * 1.2);
         }
     }
@@ -453,7 +441,6 @@ CCRepeatForever *repeat;
 
 -(CGPoint)currentPlayerPosition {
     currentPlayerPoint = player.position;
-    NSLog(@"%@", NSStringFromCGPoint(currentPlayerPoint));
     return currentPlayerPoint;
 }
 
